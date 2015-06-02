@@ -30,7 +30,8 @@ If you like WP Attachments please leave a review or donation!
 
 = Included Languages =
 
-* English (EN) - **Marco Milesi**
+* English (EN) - Authors
+* Italian (IT) - Coming soon
 
 = Contributions =
 
