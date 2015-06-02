@@ -1,16 +1,16 @@
 === EU Cookie Law ===
-Contributors: alexmoss, Milmor, ShaneJones
-Version:      2.0.1
-Author:       Alex Moss, Marco Milesi, Shane Jones
+Contributors: alexmoss, Milmor, pleer, ShaneJones
+Version:      2.0.2
+Author:       Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy
 Requires at least: 3.8
 Tested up to: 4.3
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Cookie Law informs users that your site has cookies, with a popup for more information and ability to lock scripts before acceptance.
+EU Cookie Law informs users that your site has cookies, with a popup for more information and ability to lock scripts before acceptance.
 
 == Description ==
 
@@ -22,11 +22,13 @@ Simply install the plugin and follow the instructions on the Settings page.
 
 Demo: [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 
-= Main Features =
+= Features =
 * Customizable banner
-* Easy shortcodes that block scripts while cookies are not accepted
+* Easy shortcodes that block scripts if cookies are not accepted
+* Set cookie expiry
+* Set banner position
 
-> EU Cookie Law started from [Peadig](https://wordpress.org/plugins/eu-cookie-law/) in 2012 and in june 2015 has became part of the project [WPGov.it](http://www.wpgov.it) that aims to give Italian Public Government powerful open source solutions to make complete and law-compatible websites.
+> EU Cookie Law started from [Peadig](http://peadig.com/wordpress-plugins/eu-cookie-law/) in 2012 and in june 2015 has became part of the project [WPGov.it](http://www.wpgov.it) that aims to give Italian Public Government powerful open source solutions to make complete and law-compatible websites.
 
 = Included Languages =
 
@@ -36,7 +38,7 @@ Demo: [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 = Contributions =
 
 * Italian community [Porte Aperte sul Web](http://www.porteapertesulweb.it) for beta-testing and ideas.
-* This plugin was originally developed by [3DoorDigital](http://3doordigital.com/wordpress/plugins/eu-cookie-law/).
+* This plugin was originally developed by [Peadig](http://peadig.com/wordpress-plugins/eu-cookie-law/).
 
 
 == Installation ==
@@ -67,7 +69,7 @@ ex. `[cookie height="100px" width="100%"] //My code [/cookie]`
 
 == Changelog ==
 
-= 2.0 + 2.0.1 - 06.2015 =
+= 2.0 + 2.0.1 + 2.0.2 - 06.2015 =
 * Plugin reload
 
 = 1.2 =
