@@ -1,19 +1,18 @@
-=== Plugin Name ===
-Contributors: alexmoss, Milmor, ShaneJones, pleer
-Plugin Name:  EU Cookie Law
-Plugin URI:   https://wordpress.org/plugins/eu-cookie-law/
-Description:  Cookie Law informs users that your site has cookies, with a popup for more information and ability to lock scripts before acceptance.
-Version:      2.0
-Author:       Alex Moss, Marco Milesi, Shane Jones, Peadig
+=== EU Cookie Law ===
+Contributors: alexmoss, Milmor, ShaneJones
+Version:      2.0.1
+Author:       Alex Moss, Marco Milesi, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy
 Requires at least: 3.8
 Tested up to: 4.3
-Stable tag: 2.0
+Stable tag: 2.0.1
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Cookie Law informs users that your site has cookies, with a popup for more information and ability to lock scripts before acceptance.
 
 == Description ==
-
-> We are rewriting the plugin to add new functions. For the moment, please consider it in beta-testing
 
 EU Cookie Law allows to comply the EU Cookie Law by informing users that your site has cookies, with a popup for more information and ability to lock scripts before acceptance.
 
@@ -25,7 +24,7 @@ Demo: [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 * Customizable banner
 * Easy shortcodes that block scripts while cookies are not accepted
 
-> EU Cookie Law started from [Peadig](https://wordpress.org/plugins/eu-cookie-law/) in 2012 and by june 2015 is part of the project [WPGov.it](http://www.wpgov.it) that aims to give Italian Public Government powerful open source solutions to make complete and law-compatible websites.
+> EU Cookie Law started from [Peadig](https://wordpress.org/plugins/eu-cookie-law/) in 2012 and in june 2015 has became part of the project [WPGov.it](http://www.wpgov.it) that aims to give Italian Public Government powerful open source solutions to make complete and law-compatible websites.
 
 = Included Languages =
 
@@ -60,15 +59,13 @@ ex. `[cookie height="100px" width="100%"] //My code [/cookie]`
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets 
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png` 
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+1. Example (cookie not accepted) - [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
+2. Example (cookie accepted) - [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
+3. Example of the banner
 
 == Changelog ==
 
-= 2.0 - 06.2015 =
+= 2.0 + 2.0.1 - 06.2015 =
 * Plugin reload
 
 = 1.2 =
