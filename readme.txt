@@ -13,7 +13,9 @@ Stable tag: 2.0
 
 == Description ==
 
-Cookie Law allows to comply the EU Cookie Law by informing users that your site has cookies, with a popup for more information and ability to lock scripts before acceptance.
+> We are rewriting the plugin to add new functions. For the moment, please consider it in beta-testing
+
+EU Cookie Law allows to comply the EU Cookie Law by informing users that your site has cookies, with a popup for more information and ability to lock scripts before acceptance.
 
 Simply install the plugin and follow the instructions on the Settings page.
 
@@ -23,10 +25,7 @@ Demo: [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 * Customizable banner
 * Easy shortcodes that block scripts while cookies are not accepted
 
-For support questions use [wpgov.it/supporto](http://wpgov.it/supporto) or wordpress.org.
-If you like WP Attachments please leave a review or donation!
-
-> EU Cookie Law started from [Peadig](https://wordpress.org/plugins/eu-cookie-law/) in 2012 and is part of the project [WPGov.it](http://www.wpgov.it) that aims to give Italian Public Government powerful open source solutions to make complete and law-compatible websites.
+> EU Cookie Law started from [Peadig](https://wordpress.org/plugins/eu-cookie-law/) in 2012 and by june 2015 is part of the project [WPGov.it](http://www.wpgov.it) that aims to give Italian Public Government powerful open source solutions to make complete and law-compatible websites.
 
 = Included Languages =
 
@@ -48,6 +47,24 @@ This section describes how to install the plugin and get it working.
 3. Go to the EU Cookie settings page
 4. Go through the steps and hit update!
 
+== Frequently Asked Questions ==
+
+= How can i block cookies? =
+
+At the moment you can use `[cookie]` and `[/cookie]` shortcodes. Everthing there will be shown only when cookies are accepted.
+There are some parameters too:
+- height: ex. 200px
+- width: ex. 100%
+
+ex. `[cookie height="100px" width="100%"] //My code [/cookie]`
+
+== Screenshots ==
+
+1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
+the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets 
+directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png` 
+(or jpg, jpeg, gif).
+2. This is the second screen shot
 
 == Changelog ==
 
@@ -55,11 +72,8 @@ This section describes how to install the plugin and get it working.
 * Plugin reload
 
 = 1.2 =
-
 * Fixed cookie storing bug in Firefox
 
-
 = 1.1 =
-
 * Fixed cookie storing bug
 * Added in CSS support for IE
