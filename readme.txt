@@ -1,10 +1,10 @@
 === Plugin Name ===
-Contributors: alexmoss, Milmor, ShaneJones
-Plugin Name:  Cookie Law
+Contributors: alexmoss, Milmor, ShaneJones, pleer
+Plugin Name:  EU Cookie Law
 Plugin URI:   https://wordpress.org/plugins/eu-cookie-law/
 Description:  Cookie Law informs users that your site has cookies, with a popup for more information and ability to lock scripts before acceptance.
 Version:      2.0
-Author:       Alex Moss, Marco Milesi, Shane Jones
+Author:       Alex Moss, Marco Milesi, Shane Jones, Peadig
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy
 Requires at least: 3.8
@@ -26,7 +26,7 @@ Demo: [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 For support questions use [wpgov.it/supporto](http://wpgov.it/supporto) or wordpress.org.
 If you like WP Attachments please leave a review or donation!
 
-> Cookie Law is part of the project [WPGov.it](http://www.wpgov.it), that aims to give Italian Public Government powerful open source solutions to make complete and law-compatible websites.
+> EU Cookie Law started from [Peadig](https://wordpress.org/plugins/eu-cookie-law/) in 2012 and is part of the project [WPGov.it](http://www.wpgov.it) that aims to give Italian Public Government powerful open source solutions to make complete and law-compatible websites.
 
 = Included Languages =
 
