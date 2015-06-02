@@ -16,6 +16,8 @@ Cookie Law informs users that your site has cookies, with a popup for more infor
 
 EU Cookie Law allows to comply the EU Cookie Law by informing users that your site has cookies, with a popup for more information and ability to lock scripts before acceptance.
 
+https://www.youtube.com/watch?v=6f2qxC3GZJ8
+
 Simply install the plugin and follow the instructions on the Settings page.
 
 Demo: [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
