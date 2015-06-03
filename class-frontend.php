@@ -3,6 +3,7 @@
 function peadig_eucookie_scripts() {
 	wp_register_style	('basecss', plugins_url('css/style.css', __FILE__), false);
 	wp_enqueue_style	('basecss');
+    wp_enqueue_script   ('jquery');
 }
 add_action('wp_head', 'peadig_eucookie_scripts');
 
