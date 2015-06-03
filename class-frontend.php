@@ -17,7 +17,7 @@ function peadig_eucookie_bar() {
         return;
     }
 
-		if(!$_COOKIE['peadigCookie']){
+		if(!$_COOKIE['euCookie']){
 		//for Cookie
 		switch($options['length']){
 			case "hours":
@@ -59,8 +59,10 @@ function peadig_eucookie_bar() {
 				$('#pea_cook_btn').click(function() {
 					var expire = new Date();
                     expire.setDate(expire.getDate() + <?php echo $expireTimer?>);
-                    document.cookie = "peadigCookie=set; expires=" + expire;
-                    window.location.reload();
+                    var isoDate = new Date(expire).toISOString();
+                    document.cookie = "euCookie=set; expires=" + isoDate + "; path=/";
+                    window.location.reload();                    
+                    
 				$(".pea_cook_wrapper").fadeOut("fast");
                 });
             });
@@ -71,7 +73,7 @@ function peadig_eucookie_bar() {
 add_action('wp_footer', 'peadig_eucookie_bar', 1000);
 
 function eu_cookie_shortcode( $atts, $content = null ) {
-    if (!$_COOKIE['peadigCookie']) {
+    if (!$_COOKIE['euCookie']) {
         extract(shortcode_atts(
              array(
                  'height' => 'auto',

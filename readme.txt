@@ -1,12 +1,12 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:      2.0.2
+Version:      2.0.3
 Author:       Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy
 Requires at least: 3.8
 Tested up to: 4.3
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,7 +69,10 @@ ex. `[cookie height="100px" width="100%"] //My code [/cookie]`
 
 == Changelog ==
 
-= 2.0 + 2.0.1 + 2.0.2 - 06.2015 =
+= 2.0.3 - 03.06.2015 =
+* Fixed cookie storing caused by wrong iso date
+
+= 2.0 + 2.0.1 + 2.0.2 - 02.06.2015 =
 * Plugin reload
 
 = 1.2 =
