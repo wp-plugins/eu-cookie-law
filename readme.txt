@@ -26,6 +26,9 @@ Demo: [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 * Customizable banner
 * Easy shortcodes that block scripts if cookies are not accepted
 * Set cookie expiry
+* Compatible with multilanguage plugins
+* Compatible with mobile themes and plugins 
+* Great responsiveness for tablets and smartphones
 * Set banner position
 
 > EU Cookie Law started from [Peadig](http://peadig.com/wordpress-plugins/eu-cookie-law/) in 2012 and in june 2015 has became part of the project [WPGov.it](http://www.wpgov.it) that aims to give Italian Public Government powerful open source solutions to make complete and law-compatible websites.
