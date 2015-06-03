@@ -7,7 +7,7 @@ function peadig_eucookie_init(){
  	
 add_action('admin_menu', 'show_peadig_eucookie_options');
 function show_peadig_eucookie_options() {
-	add_options_page('EU Cookie Options', 'EU Cookie', 'manage_options', 'peadig_eucookie', 'peadig_eucookie_options');
+	add_options_page('EU Cookie Law', 'EU Cookie Law', 'manage_options', 'peadig_eucookie', 'peadig_eucookie_options');
 }
 
 
@@ -22,7 +22,8 @@ function pea_cook_defaults()
 		'barlink'    	=> 'more information',
 		'barbutton'   	=> 'Accept',
 		'closelink'    	=> 'Close',
-		'boxcontent'    => 'The cookie settings on this website are set to "allow cookies" to give you the best browsing experience possible. If you continue to use this website without changing your cookie settings or you click "Accept" below then you are consenting to this.'
+		'boxcontent'    => 'The cookie settings on this website are set to "allow cookies" to give you the best browsing experience possible. If you continue to use this website without changing your cookie settings or you click "Accept" below then you are consenting to this.',
+        'bhtmlcontent'  => '<b>Content not available.</b><br><small>Please allow cookies by clicking Accept on the banner</small>'
         )
     );	
 }
@@ -32,7 +33,7 @@ function pea_cook_defaults()
 function peadig_eucookie_options() {
 ?>
 	<div class="wrap">
-		<h2>EU Cookie Options</h2>
+		<h2>EU Cookie Law <?php echo get_option( 'ecl_version_number' ); ?> &bull; Options</h2>
 		<form method="post" action="options.php">
 			<?php settings_fields('peadig_eucookie_options'); ?>
 			<?php $options = get_option('peadig_eucookie'); ?>
@@ -80,9 +81,31 @@ function peadig_eucookie_options() {
 				<tr valign="top"><th scope="row"><label for="barbutton">"Close Popup" Text</label></th>
 					<td><input id="closelink" type="text" name="peadig_eucookie[closelink]" value="<?php echo $options['closelink']; ?>" /></td>
 				</tr>
-				<tr valign="top"><th scope="row"><label for="boxcontent">Popup Box Content<br/>Use this to inform your users about your cookie policy</label></th>
+                <tr valign="top"><th scope="row"><label for="boxlinkid">Bar Link<br/><small>Use this field if you want to link a page instead of showing the popup</small></label></th>
+                    <td>
+                    <?php $args = array(
+                        'depth'                 => 0,
+                        'child_of'              => 0,
+                        'selected'              => $options['boxlinkid'],
+                        'echo'                  => 1,
+                        'name'                  => 'peadig_eucookie[boxlinkid]',
+                        'id'                    => 'boxlinkid', 
+                        'show_option_none'      => 'none', 
+                        'show_option_no_change' => null, 
+                        'option_none_value'     => null, 
+                    ); ?>
+
+                    <?php wp_dropdown_pages($args); ?>
+                    </td>
+				</tr>
+				<tr valign="top"><th scope="row"><label for="boxcontent">Popup Box Content<br/><small>Use this to inform your users about your cookie policy</small></label></th>
 					<td>
 <textarea style='font-size: 90%; width:95%;' name='peadig_eucookie[boxcontent]' id='boxcontent' rows='9' ><?php echo $options['boxcontent']; ?></textarea>
+					</td>
+				</tr>
+                <tr valign="top"><th scope="row"><label for="bhtmlcontent">Blocked code message<br/><small>This is the message that will be displayed for locked-code areas</small></label></th>
+					<td>
+<textarea style='font-size: 90%; width:95%;' name='peadig_eucookie[bhtmlcontent]' id='bhtmlcontent' rows='9' ><?php echo $options['bhtmlcontent']; ?></textarea>
 					</td>
 				</tr>
 			</table>

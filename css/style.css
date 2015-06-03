@@ -12,6 +12,22 @@
 	text-align: center;
 }
 
+.pea_cook_control {
+	float:left;
+	width:100%;
+    background-color: rgba(0,0,0,0.85);
+    /* For IE 5.5 - 7 */
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc000000, endColorstr=#cc000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc000000, endColorstr=#cc000000)";
+    padding: 8px 21px;
+    margin: 0;
+    -webkit-border-radius: 5px;  -moz-border-radius: 5px;  border-radius: 5px;
+    z-index: 10000;
+	text-align: center;
+	color:white;
+}
+
 .pea_cook_wrapper.pea_cook_topleft {
     top:30px;
     left:30px;

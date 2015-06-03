@@ -1,12 +1,12 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:      2.0.5
+Version:      2.1
 Author:       Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy
 Requires at least: 3.8
 Tested up to: 4.3
-Stable tag: 2.0.5
+Stable tag: 2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,19 @@ Demo: [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 * Great responsiveness for tablets and smartphones
 * Set banner position
 
+= Cookie block =
+You can lock cookies using `[cookie]` and `[/cookie]` shortcodes in every page and widget.
+ex. `[cookie height="100px" width="100%"] //My code [/cookie]`
+
+In php files:
+`if ( cookie_accepted() ) {
+	//My code
+}`
+
+You can also use `[cookie-control]` in your cookie policy to display a box that allows to revoke consent (if cookies accepted) of accept cookies (if not done yet).
+
+
+
 > EU Cookie Law started from [Peadig](http://peadig.com/wordpress-plugins/eu-cookie-law/) in 2012 and in june 2015 has became part of the project [WPGov.it](http://www.wpgov.it) that aims to give Italian Public Government powerful open source solutions to make complete and law-compatible websites.
 
 = Included Languages =
@@ -53,24 +66,20 @@ This section describes how to install the plugin and get it working.
 3. Go to the EU Cookie settings page
 4. Go through the steps and hit update!
 
-== Frequently Asked Questions ==
-
-= How can i block cookies? =
-
-At the moment you can use `[cookie]` and `[/cookie]` shortcodes. Everthing there will be shown only when cookies are accepted.
-There are some parameters too:
-- height: ex. 200px
-- width: ex. 100%
-
-ex. `[cookie height="100px" width="100%"] //My code [/cookie]`
-
 == Screenshots ==
 
 1. Example (cookie not accepted) - [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 2. Example (cookie accepted) - [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 3. Example of the banner
+4. Example of `[cookie-control]`
 
 == Changelog ==
+
+= 2.1 03.06.2015 =
+* Added option to link directly to a page instead of popup
+* Added ability to change default cookie-lock message
+* Added `[cookie-control]` shortcode
+* Minor changes + bugfixes
 
 = 2.0.3 + 2.0.4 + 2.0.5 - 03.06.2015 =
 * Fixed cookie storing caused by wrong iso date

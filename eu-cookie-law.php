@@ -3,7 +3,7 @@
 Plugin Name:  EU Cookie Law
 Plugin URI:   https://wordpress.org/plugins/eu-cookie-law/
 Description:  Cookie Law informs users that your site has cookies, with a popup for more information and ability to lock scripts before acceptance.
-Version:      2.0.5
+Version:      2.1
 Author:       Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://wordpress.org/plugins/eu-cookie-law/
 Contributors: alexmoss, Milmor, peer, ShaneJones
@@ -26,7 +26,15 @@ function ecl_action_admin_init() {
     
     $arraya_ecl_v = get_plugin_data ( __FILE__ );
     $new_version = $arraya_ecl_v['Version'];
-
+    
+    if ( !get_option( 'ecl_version_number' ) ) { pea_cook_defaults(); }
+    
+    if (version_compare(get_option( 'ecl_version_number' ), "2.1", "<")) {
+        $my_options = get_option('peadig_eucookie');
+        $my_options['bhtmlcontent'] = '<b>Content not available.</b><br><small>Please allow cookies by clicking Accept on the banner</small>';
+        update_option('peadig_eucookie', $my_options);
+    }
+        
     update_option( 'ecl_version_number', $new_version );
 } add_action('admin_init', 'ecl_action_admin_init');
 
