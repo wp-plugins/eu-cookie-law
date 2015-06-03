@@ -9,23 +9,28 @@
     margin: 0;
     -webkit-border-radius: 5px;  -moz-border-radius: 5px;  border-radius: 5px;
     z-index: 10000;
+	text-align: center;
 }
 
 .pea_cook_wrapper.pea_cook_topleft {
     top:30px;
-    left:30px
+    left:30px;
+	margin-right:5%;
 }
 .pea_cook_wrapper.pea_cook_topright {
     top:30px;
-    right:30px
+    right:30px;
+	margin-left:5%;
 }
 .pea_cook_wrapper.pea_cook_bottomleft {
     bottom:30px;
-    left:30px
+    left:30px;
+	margin-right:5%;
 }
 .pea_cook_wrapper.pea_cook_bottomright {
     bottom:30px;
-    right:30px
+    right:30px;
+	margin-left:5%;
 }
 
 .pea_cook_wrapper p{
