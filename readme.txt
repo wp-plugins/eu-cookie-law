@@ -36,13 +36,11 @@ You can lock cookies using `[cookie]` and `[/cookie]` shortcodes in every page a
 ex. `[cookie height="100px" width="100%"] //My code [/cookie]`
 
 In php files:
-`if ( cookie_accepted() ) {
-	//My code
+`if ( function_exists('cookie_accepted') && cookie_accepted() ) {
+    // Your code
 }`
 
 You can also use `[cookie-control]` in your cookie policy to display a box that allows to revoke consent (if cookies accepted) of accept cookies (if not done yet).
-
-
 
 > EU Cookie Law started from [Peadig](http://peadig.com/wordpress-plugins/eu-cookie-law/) in 2012 and in june 2015 has became part of the project [WPGov.it](http://www.wpgov.it) that aims to give Italian Public Government powerful open source solutions to make complete and law-compatible websites.
 
@@ -75,6 +73,10 @@ This section describes how to install the plugin and get it working.
 
 == Changelog ==
 
+= 2.1.1 04.06.2015 =
+* Fixed shortcodes in `[cookie]...[/cookie]` not being correctly rendered
+* Best tinymce icon with windowmanager
+
 = 2.1 03.06.2015 =
 * Added option to link directly to a page instead of popup
 * Added ability to change default cookie-lock message
@@ -95,3 +97,7 @@ This section describes how to install the plugin and get it working.
 = 1.1 =
 * Fixed cookie storing bug
 * Added in CSS support for IE
+
+== Shortcodes & Functions ==
+
+= Shortcodes =
