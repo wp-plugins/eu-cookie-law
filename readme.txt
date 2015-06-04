@@ -1,12 +1,12 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:      2.1
-Author:       Alex Moss, Marco Milesi, Peadig, Shane Jones
+Version:	2.1.1
+Stable tag:	2.1.1
+Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
-Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy
+Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy, eu cookie law, italy, cookie, consent, europe
 Requires at least: 3.8
 Tested up to: 4.3
-Stable tag: 2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,8 +18,6 @@ EU Cookie Law allows to comply the EU Cookie Law by informing users that your si
 
 https://www.youtube.com/watch?v=6f2qxC3GZJ8
 
-Simply install the plugin and follow the instructions on the Settings page.
-
 Demo: [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 
 = Features =
@@ -30,19 +28,23 @@ Demo: [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 * Compatible with mobile themes and plugins 
 * Great responsiveness for tablets and smartphones
 * Set banner position
+* Complete set of developer Shortcodes and PHP Functions
+
+Simply install the plugin and follow the instructions on the Settings page.
 
 = Cookie block =
 You can lock cookies using `[cookie]` and `[/cookie]` shortcodes in every page and widget.
-ex. `[cookie height="100px" width="100%"] //My code [/cookie]`
 
 In php files:
 `if ( function_exists('cookie_accepted') && cookie_accepted() ) {
     // Your code
 }`
 
-You can also use `[cookie-control]` in your cookie policy to display a box that allows to revoke consent (if cookies accepted) of accept cookies (if not done yet).
+More Shortcodes & PHP Functions are available [in our faqs](https://wordpress.org/plugins/eu-cookie-law/faq/).
 
 > EU Cookie Law started from [Peadig](http://peadig.com/wordpress-plugins/eu-cookie-law/) in 2012 and in june 2015 has became part of the project [WPGov.it](http://www.wpgov.it) that aims to give Italian Public Government powerful open source solutions to make complete and law-compatible websites.
+
+If you think that we should provide more options or enhance the ones we already provide, please let us know in [our forum](https://wordpress.org/support/plugin/eu-cookie-law).
 
 = Included Languages =
 
@@ -64,6 +66,29 @@ This section describes how to install the plugin and get it working.
 3. Go to the EU Cookie settings page
 4. Go through the steps and hit update!
 
+== Frequently Asked Questions ==
+
+= Shortcodes available =
+
+You can lock parts of code in posts, pages and widget with these shortcode:
+`[cookie] ... [/cookie]`
+Parameters:
+`[cookie height="100px" width="100%" text="Hi <b>WordPress</b>"] //My code [/cookie]`
+
+To display a box (in pages/posts) with ability to revoke consent (if cookies accepted) or accept cookies (if not done yet):
+`[cookie-control]`
+
+= PHP Functions available =
+You can easily verify if cookies consent has been set with:
+`if ( function_exists('cookie_accepted') && cookie_accepted() ) {
+    // Your code
+}`
+However this will limit to not showing the wrapped code. If you want to display a box like when using `[cookie]` shortcode, in  php you have:
+`generate_cookie_notice($height, $width)
+generate_cookie_notice_text($height, $width, $text)`
+
+If you think that we should provide more shortcodes, functions, or enhance what we already provide, please let us know in [our forum](https://wordpress.org/support/plugin/eu-cookie-law).
+
 == Screenshots ==
 
 1. Example (cookie not accepted) - [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
@@ -76,6 +101,7 @@ This section describes how to install the plugin and get it working.
 = 2.1.1 04.06.2015 =
 * Fixed shortcodes in `[cookie]...[/cookie]` not being correctly rendered
 * Best tinymce icon with windowmanager
+* New and enhanced developer functions
 
 = 2.1 03.06.2015 =
 * Added option to link directly to a page instead of popup
@@ -97,7 +123,3 @@ This section describes how to install the plugin and get it working.
 = 1.1 =
 * Fixed cookie storing bug
 * Added in CSS support for IE
-
-== Shortcodes & Functions ==
-
-= Shortcodes =

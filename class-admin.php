@@ -54,6 +54,7 @@ function peadig_eucookie_options() {
 					</td>
 				</tr>
 			</table>
+        <hr>
 			<h3 class="title">Appearance</h3>
 			<table class="form-table">
 				<tr valign="top"><th scope="row"><label for="position">Position</label></th>
@@ -67,6 +68,7 @@ function peadig_eucookie_options() {
 					</td>
 				</tr>
 			</table>
+        <hr>
 			<h3 class="title">Content Settings</h3>
 			<table class="form-table">
 				<tr valign="top"><th scope="row"><label for="barmessage">Warning Bar Message Text</label></th>
@@ -109,6 +111,7 @@ function peadig_eucookie_options() {
 					</td>
 				</tr>
 			</table>
+            </table>
 			<p class="submit">
 			<input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
 			</p>
@@ -116,5 +119,4 @@ function peadig_eucookie_options() {
 	</div>
 <?php
 }
-
 ?>

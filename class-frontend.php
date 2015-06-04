@@ -98,6 +98,15 @@ function peadig_eucookie_bar() {
 }
 add_action('wp_footer', 'peadig_eucookie_bar', 1000);
 
+function generate_cookie_notice_text($height, $width, $text) {
+    return '<div class="eucookie" style="width:'.$width.';height:'.$height.';
+        background:url(\''.plugins_url('img/congruent_pentagon.png',__FILE__).'\') repeat;"><span>'.$text.'</span></div><div class="clear"></div>';    
+}
+
+function generate_cookie_notice($height, $width) {
+    $options = get_option('peadig_eucookie');
+    return generate_cookie_notice_text($height, $width, $options['bhtmlcontent']);
+}
 function eu_cookie_shortcode( $atts, $content = null ) {
     $options = get_option('peadig_eucookie');
     extract(shortcode_atts(
@@ -109,13 +118,22 @@ function eu_cookie_shortcode( $atts, $content = null ) {
         $atts)
     );
     if ( cookie_accepted() ) {
-        return $content;
+        return apply_filters('the_content', $content);
     } else {
-	   return '<div class="eucookie" style="width:'.$width.';height:'.$height.';
-        background:url(\''.plugins_url('img/congruent_pentagon.png',__FILE__).'\') repeat;"><span>'.$text.'</span><!--' . $content . '--></div><div class="clear"></div>';
+        $width = pulisci($content,'width=');
+        $height = pulisci($content,'height=');
+        return generate_cookie_notice($height, $width, $text);
     }
 }
 add_shortcode( 'cookie', 'eu_cookie_shortcode' );
+
+function pulisci($content,$ricerca){
+	$caratteri = strlen($ricerca)+6;
+	$stringa = substr($content, strpos($content, $ricerca), $caratteri);
+	$stringa = str_replace("=", ":", $stringa);
+	$stringa = trim(str_replace('"', '', $stringa));
+	return $stringa;
+}
 
 function eu_cookie_control_shortcode( $atts ) {
     if (!eu_cookie_enabled()) { return; }
