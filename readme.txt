@@ -1,7 +1,7 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.1.1
-Stable tag:	2.1.1
+Version:	2.1.2
+Stable tag:	2.1.2
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy, eu cookie law, italy, cookie, consent, europe
@@ -98,7 +98,7 @@ If you think that we should provide more shortcodes, functions, or enhance what 
 
 == Changelog ==
 
-= 2.1.1 04.06.2015 =
+= 2.1.1 + 2.1.2 04.06.2015 =
 * Fixed shortcodes in `[cookie]...[/cookie]` not being correctly rendered
 * Best tinymce icon with windowmanager
 * New and enhanced developer functions

@@ -120,20 +120,10 @@ function eu_cookie_shortcode( $atts, $content = null ) {
     if ( cookie_accepted() ) {
         return apply_filters('the_content', $content);
     } else {
-        $width = pulisci($content,'width=');
-        $height = pulisci($content,'height=');
         return generate_cookie_notice($height, $width, $text);
     }
 }
 add_shortcode( 'cookie', 'eu_cookie_shortcode' );
-
-function pulisci($content,$ricerca){
-	$caratteri = strlen($ricerca)+6;
-	$stringa = substr($content, strpos($content, $ricerca), $caratteri);
-	$stringa = str_replace("=", ":", $stringa);
-	$stringa = trim(str_replace('"', '', $stringa));
-	return $stringa;
-}
 
 function eu_cookie_control_shortcode( $atts ) {
     if (!eu_cookie_enabled()) { return; }
