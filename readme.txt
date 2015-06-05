@@ -1,7 +1,7 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.1.2
-Stable tag:	2.1.2
+Version:	2.2
+Stable tag:	2.2
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy, eu cookie law, italy, cookie, consent, europe
@@ -14,42 +14,42 @@ EU Cookie Law informs users that your site has cookies, with a popup for more in
 
 == Description ==
 
-EU Cookie Law allows to comply the EU Cookie Law by informing users that your site has cookies, with a popup for more information and ability to lock scripts before acceptance.
+EU Cookie Law is the easiest, most elegant and complete solution that allows your website to comply the european cookie law by informing users that your site has cookies, with a popup for more information and ability to lock scripts before acceptance. This plugin has been coded to comply the more strict italian law too.
 
 https://www.youtube.com/watch?v=6f2qxC3GZJ8
 
 Demo: [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 
 = Features =
-* Customizable banner
-* Easy shortcodes that block scripts if cookies are not accepted
+* **Customize banner**
+* Block scripts if cookies are not accepted
 * Set cookie expiry
-* Compatible with multilanguage plugins
-* Compatible with mobile themes and plugins 
-* Great responsiveness for tablets and smartphones
+* Fully **responsive** for tablets and smartphones
 * Set banner position
 * Complete set of developer Shortcodes and PHP Functions
+* Manual and **Automatic** set width and height of blocked content
+
+* Compatible with **multilanguage** plugins
+* Compatible with **mobile** themes and plugins 
 
 Simply install the plugin and follow the instructions on the Settings page.
 
 = Cookie block =
-You can lock cookies using `[cookie]` and `[/cookie]` shortcodes in every page and widget.
-
-In php files:
+You can lock cookies using `[cookie]` and `[/cookie]` shortcodes in every post, page and widget. You can use php functions too:
 `if ( function_exists('cookie_accepted') && cookie_accepted() ) {
     // Your code
 }`
 
-More Shortcodes & PHP Functions are available [in our faqs](https://wordpress.org/plugins/eu-cookie-law/faq/).
+**More Shortcodes & PHP Functions are available [in our faqs](https://wordpress.org/plugins/eu-cookie-law/faq/).**
 
-> EU Cookie Law started from [Peadig](http://peadig.com/wordpress-plugins/eu-cookie-law/) in 2012 and in june 2015 has became part of the project [WPGov.it](http://www.wpgov.it) that aims to give Italian Public Government powerful open source solutions to make complete and law-compatible websites.
-
-If you think that we should provide more options or enhance the ones we already provide, please let us know in [our forum](https://wordpress.org/support/plugin/eu-cookie-law).
+> EU Cookie Law started from [Peadig](http://peadig.com/wordpress-plugins/eu-cookie-law/) in 2012 and in june 2015 has became part of [WPGov.it](http://www.wpgov.it) that aims to give Italian Public Government powerful open source solutions for websites.
 
 = Included Languages =
 
 * English (EN) - Authors
-* Italian (IT) - Coming soon
+* Italian (IT) - Authors
+
+If you want to help out, we have included the .pot file in /language folder.
 
 = Contributions =
 
@@ -97,6 +97,13 @@ If you think that we should provide more shortcodes, functions, or enhance what 
 4. Example of `[cookie-control]`
 
 == Changelog ==
+
+= 2.2 05.06.2015 =
+* **Added** customization options (ex. background+font color)
+* Added multilanguage support
+* Added italian language
+* Better UI for options panel
+* Minor bugfixes
 
 = 2.1.1 + 2.1.2 04.06.2015 =
 * Fixed shortcodes in `[cookie]...[/cookie]` not being correctly rendered

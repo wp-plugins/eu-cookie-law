@@ -1,13 +1,8 @@
 .pea_cook_wrapper {
     position: fixed;
-    background-color: rgba(0,0,0,0.85);
-    /* For IE 5.5 - 7 */
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc000000, endColorstr=#cc000000);
-    /* For IE 8*/
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc000000, endColorstr=#cc000000)";
     padding: 8px 21px;
     margin: 0;
-    -webkit-border-radius: 5px;  -moz-border-radius: 5px;  border-radius: 5px;
+    border-radius: 5px;
     z-index: 10000;
 	text-align: center;
 }
@@ -15,14 +10,9 @@
 .pea_cook_control {
 	float:left;
 	width:100%;
-    background-color: rgba(0,0,0,0.85);
-    /* For IE 5.5 - 7 */
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc000000, endColorstr=#cc000000);
-    /* For IE 8*/
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc000000, endColorstr=#cc000000)";
     padding: 8px 21px;
     margin: 0;
-    -webkit-border-radius: 5px;  -moz-border-radius: 5px;  border-radius: 5px;
+    border-radius: 5px;
     z-index: 10000;
 	text-align: center;
 	color:white;
@@ -53,20 +43,17 @@
     bottom: 30px;
     font-family: "helvetica neue", helvetica, arial, sans-serif;
     font-size: 11px;
-    color: #fff;
     margin: 0;
     font-weight: bold;
 
 }
 .pea_cook_wrapper a {
-    color: #fff;
     border-bottom: dotted thin #eee;
     text-decoration: none;
 }
 .pea_cook_wrapper a:hover {
     text-decoration: none;
     border-bottom-style: solid;
-    color: #ddd;
 }
 
 
@@ -135,7 +122,6 @@ button.pea_cook_btn {
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc000000, endColorstr=#cc000000)";    
 }
 .pea_cook_more_info_popover_inner a {
-    color: #fff;
     border-bottom: dotted thin #eee;
     text-decoration: none;
 }
@@ -146,15 +132,11 @@ button.pea_cook_btn {
 }
 
 .pea_cook_more_info_popover h2{
-    color: #fff;
     font-size: 22px;
     font-weight: bold;
 }
 .pea_cook_more_info_popover h3{
-    color: #fff;  font-size: 22px;  font-weight: bold;
-}
-.pea_cook_more_info_popover p{
-    color: #fff;
+    font-size: 22px;  font-weight: bold;
 }
 .eucookie {
 border:2px dashed black;

@@ -58,16 +58,24 @@ function peadig_eucookie_bar() {
     } else {
         $link = '#';
     }
-                
-                
 ?>
-        <div class="pea_cook_wrapper pea_cook_<?php if ($options['position']!="") {echo $options['position'];} else {echo "bottomright";} ?>">
-            <p><?php echo $options['barmessage']; ?> <a href="<?php echo $link; ?>" id="fom"><?php echo $options['barlink']; ?></a> <button id="pea_cook_btn" class="pea_cook_btn" href="#"><?php echo $options['barbutton']; ?></button></p>
+        <div
+            class="pea_cook_wrapper pea_cook_<?php echo $options['position']; ?>"
+            style="
+                color:<?php echo ecl_frontstyle('fontcolor'); ?>;
+                background-color: rgba(<?php echo ecl_frontstyle('backgroundcolor'); ?>,0.85);
+            ">
+            <p><?php echo $options['barmessage']; ?> <a style="color:<?php echo $options['fontcolor']; ?>;" href="<?php echo $link; ?>" id="fom"><?php echo $options['barlink']; ?></a> <button id="pea_cook_btn" class="pea_cook_btn" href="#"><?php echo $options['barbutton']; ?></button></p>
         </div>
         <div class="pea_cook_more_info_popover">
-            <div class="pea_cook_more_info_popover_inner">
+            <div
+                 class="pea_cook_more_info_popover_inner"
+                 style="
+                    color:<?php echo ecl_frontstyle('fontcolor'); ?>;
+                    background-color: rgba(<?php echo ecl_frontstyle('backgroundcolor'); ?>,0.9);
+                    ">
              <p><?php echo $options['boxcontent']; ?></p>
-                <p><a href="#" id="pea_close"><?php echo $options['closelink']; ?></a></p>
+                <p><a style="color:<?php echo $options['fontcolor']; ?>;" href="#" id="pea_close"><?php echo $options['closelink']; ?></a></p>
 			</div>
         </div>
 
@@ -111,8 +119,8 @@ function eu_cookie_shortcode( $atts, $content = null ) {
     $options = get_option('peadig_eucookie');
     extract(shortcode_atts(
         array(
-            'height' => 'auto',
-            'width' => 'auto',
+            'height' => '',
+            'width' => '',
             'text' => $options['bhtmlcontent']
         ),
         $atts)
@@ -120,10 +128,53 @@ function eu_cookie_shortcode( $atts, $content = null ) {
     if ( cookie_accepted() ) {
         return apply_filters('the_content', $content);
     } else {
-        return generate_cookie_notice($height, $width, $text);
+        if (!$width) { $width = pulisci($content,'width='); }
+        if (!$height) { $height = pulisci($content,'height='); }
+        return generate_cookie_notice($height, $width);
     }
 }
 add_shortcode( 'cookie', 'eu_cookie_shortcode' );
+
+function pulisci($content,$ricerca){
+	$caratteri = strlen($ricerca)+6;
+	$stringa = substr($content, strpos($content, $ricerca), $caratteri);
+	$stringa = str_replace($ricerca, '', $stringa);
+	$stringa = trim(str_replace('"', '', $stringa));
+	return $stringa;
+}
+
+function ecl_hex2rgb($hex) {
+   $hex = str_replace("#", "", $hex);
+
+   if(strlen($hex) == 3) {
+      $r = hexdec(substr($hex,0,1).substr($hex,0,1));
+      $g = hexdec(substr($hex,1,1).substr($hex,1,1));
+      $b = hexdec(substr($hex,2,1).substr($hex,2,1));
+   } else {
+      $r = hexdec(substr($hex,0,2));
+      $g = hexdec(substr($hex,2,2));
+      $b = hexdec(substr($hex,4,2));
+   }
+   $rgb = array($r, $g, $b);
+   //return implode(",", $rgb); // returns the rgb values separated by commas
+   return $rgb; // returns an array with the rgb values
+}
+
+function ecl_frontstyle($name) {
+    $options = get_option('peadig_eucookie');
+    switch ($name) {
+    case 'fontcolor':
+        return $options['fontcolor'];
+        break;
+    case 'backgroundcolor':
+        $backgroundcolors = ecl_hex2rgb($options['backgroundcolor']);
+        return $backgroundcolors[0].','.$backgroundcolors[1].','.$backgroundcolors[2];
+        break;
+    case 2:
+        echo "i equals 2";
+        break;
+}
+}
 
 function eu_cookie_control_shortcode( $atts ) {
     if (!eu_cookie_enabled()) { return; }
@@ -144,7 +195,7 @@ function eu_cookie_control_shortcode( $atts ) {
         </script>';
     } else {
         return '
-            <div class="pea_cook_control">
+            <div class="pea_cook_control" style="color:'.ecl_frontstyle('fontcolor').'; background-color: rgba('.ecl_frontstyle('backgroundcolor').',0.9);">
                 Cookies are currently disabled.
                 <button id="eu_revoke_cookies" class="eu_control_btn" href="#">Accept Cookies</button>
             </div>

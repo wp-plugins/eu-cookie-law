@@ -10,80 +10,97 @@ function show_peadig_eucookie_options() {
 	add_options_page('EU Cookie Law', 'EU Cookie Law', 'manage_options', 'peadig_eucookie', 'peadig_eucookie_options');
 }
 
-
-function pea_cook_defaults()
-{
-	update_option('peadig_eucookie', array	(
-        'enabled' 		=> '1',
-		'lengthnum' 	=> '1',
-		'length'    	=> 'months',
-		'position'  	=> 'bottomright',
-		'barmessage'	=> 'By continuing to use the site, you agree to the use of cookies.',
-		'barlink'    	=> 'more information',
-		'barbutton'   	=> 'Accept',
-		'closelink'    	=> 'Close',
-		'boxcontent'    => 'The cookie settings on this website are set to "allow cookies" to give you the best browsing experience possible. If you continue to use this website without changing your cookie settings or you click "Accept" below then you are consenting to this.',
-        'bhtmlcontent'  => '<b>Content not available.</b><br><small>Please allow cookies by clicking Accept on the banner</small>'
-        )
-    );	
-}
-
-
 // ADMIN PAGE
 function peadig_eucookie_options() {
 ?>
 	<div class="wrap">
-		<h2>EU Cookie Law <?php echo get_option( 'ecl_version_number' ); ?> &bull; Options</h2>
+        <div style="position: absolute;right: 20px;">
+            <a style="padding:20px;" href="http://www.wpgov.it" target="_blank" title="WPGov.it">
+                <img src="<?php echo plugins_url('img/wpgov.png',__FILE__); ?>" />
+            </a>
+            <a style="padding:20px;" href="http://peadig.com" target="_blank" title="Peadig.com">
+                <img src="<?php echo plugins_url('img/peadig.png',__FILE__); ?>" />
+            </a>
+        </div>
+		<h2>EU Cookie Law &bull; <?php echo get_option( 'ecl_version_number' ); ?>
+            <a href="http://wordpress.org/support/view/plugin-reviews/eu-cookie-law" target="_blank" class="add-new-h2">
+                <?php _e('Rate us', 'eu-cookie-law'); ?> ★★★★★
+            </a>
+            <a href="https://wordpress.org/support/plugin/eu-cookie-law" target="_blank" class="add-new-h2">
+                <?php _e('Support', 'eu-cookie-law'); ?>
+            </a>
+        </h2>
 		<form method="post" action="options.php">
 			<?php settings_fields('peadig_eucookie_options'); ?>
-			<?php $options = get_option('peadig_eucookie'); ?>
-			<h3 class="title">Main Settings</h3>
+			<?php
+                ecl_check_defaults();
+                $options = get_option('peadig_eucookie');
+            ?>
 			<table class="form-table">
-				<tr valign="top"><th scope="row"><label for="enabled">Enabled</label></th>
+				<tr valign="top"><th scope="row"><label for="enabled"><?php _e('Activate'); ?></label></th>
 					<td><input id="enabled" name="peadig_eucookie[enabled]" type="checkbox" value="1" <?php checked('1', $options['enabled']); ?> /></td>
 				</tr>
-				<tr valign="top"><th scope="row"><label for="lengthnum">Acceptance Cookie Length</label></th>
+				<tr valign="top"><th scope="row"><label for="lengthnum">
+                    <?php _e('Cookie acceptance lenght', 'eu-cookie-law'); ?></label></th>
 					<td><input id="lengthnum" type="text" name="peadig_eucookie[lengthnum]" value="<?php echo $options['lengthnum']; ?>" size="5" /> 
 						<select name="peadig_eucookie[length]">
-							  <option value="hours"<?php if ($options['length'] == 'hours') { echo ' selected="selected"'; } ?>>hours</option>
-							  <option value="days"<?php if ($options['length'] == 'days') { echo ' selected="selected"'; } ?>>days</option>
-							  <option value="weeks"<?php if ($options['length'] == 'weeks') { echo ' selected="selected"'; } ?>>weeks</option>
-							  <option value="months"<?php if ($options['length'] == 'months') { echo ' selected="selected"'; } ?>>months</option>
+							  <option value="hours"<?php if ($options['length'] == 'hours') { echo ' selected="selected"'; } ?>>
+                                  <?php _e('hours', 'eu-cookie-law'); ?></option>
+							  <option value="days"<?php if ($options['length'] == 'days') { echo ' selected="selected"'; } ?>>
+                                  <?php _e('days', 'eu-cookie-law'); ?></option>
+							  <option value="weeks"<?php if ($options['length'] == 'weeks') { echo ' selected="selected"'; } ?>>
+                                  <?php _e('weeks', 'eu-cookie-law'); ?></option>
+							  <option value="months"<?php if ($options['length'] == 'months') { echo ' selected="selected"'; } ?>>
+                                  <?php _e('months', 'eu-cookie-law'); ?></option>
 						</select><br />
-<small>Once the user clicks accept the bar will disappear. You can set how long this will apply for before the bar reappears to the user.</small>
+<small><?php _e('Once the user clicks accept the bar will disappear. You can set how long this will apply for before the bar reappears to the user.', 'eu-cookie-law'); ?></small>
 					</td>
 				</tr>
 			</table>
         <hr>
-			<h3 class="title">Appearance</h3>
+			<h3 class="title"><?php _e('Appearance'); ?></h3>
 			<table class="form-table">
-				<tr valign="top"><th scope="row"><label for="position">Position</label></th>
+				<tr valign="top"><th scope="row"><label for="position"><?php _e('Position'); ?></label></th>
 					<td>
 						<select name="peadig_eucookie[position]">
-							  <option value="bottomright"<?php if ($options['position'] == 'bottomright') { echo ' selected="selected"'; } ?>>Bottom Right</option>
-							  <option value="topright"<?php if ($options['position'] == 'topright') { echo ' selected="selected"'; } ?>>Top Right</option>
-							  <option value="bottomleft"<?php if ($options['position'] == 'bottomleft') { echo ' selected="selected"'; } ?>>Bottom Left</option>
-							  <option value="topleft"<?php if ($options['position'] == 'topleft') { echo ' selected="selected"'; } ?>>Top Left</option>
+							  <option value="bottomright"<?php if ($options['position'] == 'bottomright') { echo ' selected="selected"'; } ?>>
+                                  <?php _e('Bottom Right', 'eu-cookie-law'); ?></option>
+							  <option value="topright"<?php if ($options['position'] == 'topright') { echo ' selected="selected"'; } ?>>
+                                  <?php _e('Top Right', 'eu-cookie-law'); ?></option>
+							  <option value="bottomleft"<?php if ($options['position'] == 'bottomleft') { echo ' selected="selected"'; } ?>>
+                                  <?php _e('Bottom Left', 'eu-cookie-law'); ?></option>
+							  <option value="topleft"<?php if ($options['position'] == 'topleft') { echo ' selected="selected"'; } ?>>
+                                  <?php _e('Top Left', 'eu-cookie-law'); ?></option>
 						</select>
 					</td>
 				</tr>
+                <tr valign="top"><th scope="row"><label for="backgroundcolor">
+                    <?php _e('Background Color', 'eu-cookie-law'); ?></label></th>
+					<td><input id="backgroundcolor" type="text" name="peadig_eucookie[backgroundcolor]" value="<?php echo $options['backgroundcolor']; ?>" class="color-field" data-default-color="#000000"/></td>
+				</tr>
+                <tr valign="top"><th scope="row"><label for="fontcolor">
+                    <?php _e('Font Color', 'eu-cookie-law'); ?></label></th>
+					<td><input id="fontcolor" type="text" name="peadig_eucookie[fontcolor]" value="<?php echo $options['fontcolor']; ?>"  class="color-field" data-default-color="#ffffff"/></td>
+				</tr>
 			</table>
         <hr>
-			<h3 class="title">Content Settings</h3>
+			<h3 class="title"><?php _e('Content'); ?></h3>
 			<table class="form-table">
-				<tr valign="top"><th scope="row"><label for="barmessage">Warning Bar Message Text</label></th>
+				<tr valign="top"><th scope="row"><label for="barmessage">
+                    <?php _e('Bar Message', 'eu-cookie-law'); ?></label></th>
 					<td><input id="barmessage" type="text" name="peadig_eucookie[barmessage]" value="<?php echo $options['barmessage']; ?>" size="100" /></td>
 				</tr>
-				<tr valign="top"><th scope="row"><label for="barlink">Wording for link to find out more info</label></th>
+				<tr valign="top"><th scope="row"><label for="barlink">
+                    <?php _e('More Info Text', 'eu-cookie-law'); ?></label></th>
 					<td><input id="barlink" type="text" name="peadig_eucookie[barlink]" value="<?php echo $options['barlink']; ?>" /></td>
 				</tr>
-				<tr valign="top"><th scope="row"><label for="barbutton">Accept Button Text</label></th>
+				<tr valign="top"><th scope="row"><label for="barbutton">
+                    <?php _e('Accept Text', 'eu-cookie-law'); ?></label></th>
 					<td><input id="barbutton" type="text" name="peadig_eucookie[barbutton]" value="<?php echo $options['barbutton']; ?>" /></td>
 				</tr>
-				<tr valign="top"><th scope="row"><label for="barbutton">"Close Popup" Text</label></th>
-					<td><input id="closelink" type="text" name="peadig_eucookie[closelink]" value="<?php echo $options['closelink']; ?>" /></td>
-				</tr>
-                <tr valign="top"><th scope="row"><label for="boxlinkid">Bar Link<br/><small>Use this field if you want to link a page instead of showing the popup</small></label></th>
+                <tr valign="top"><th scope="row"><label for="boxlinkid">
+                    <?php _e('Bar Link', 'eu-cookie-law'); ?><br/><small>
+                    <?php _e('Use this field if you want to link a page instead of showing the popup', 'eu-cookie-law'); ?></small></label></th>
                     <td>
                     <?php $args = array(
                         'depth'                 => 0,
@@ -100,12 +117,20 @@ function peadig_eucookie_options() {
                     <?php wp_dropdown_pages($args); ?>
                     </td>
 				</tr>
-				<tr valign="top"><th scope="row"><label for="boxcontent">Popup Box Content<br/><small>Use this to inform your users about your cookie policy</small></label></th>
+                <tr valign="top"><th scope="row"><label for="closelink">
+                    <?php _e('"Close Popup" Text', 'eu-cookie-law'); ?></label></th>
+					<td><input id="closelink" type="text" name="peadig_eucookie[closelink]" value="<?php echo $options['closelink']; ?>" /></td>
+				</tr>
+				<tr valign="top"><th scope="row"><label for="boxcontent">
+                    <?php _e('Popup Box Content', 'eu-cookie-law'); ?><br>
+                    <small><?php _e('Use this to add a popup that informs your users about your cookie policy', 'eu-cookie-law'); ?></small></label></th>
 					<td>
 <textarea style='font-size: 90%; width:95%;' name='peadig_eucookie[boxcontent]' id='boxcontent' rows='9' ><?php echo $options['boxcontent']; ?></textarea>
 					</td>
 				</tr>
-                <tr valign="top"><th scope="row"><label for="bhtmlcontent">Blocked code message<br/><small>This is the message that will be displayed for locked-code areas</small></label></th>
+                <tr valign="top"><th scope="row"><label for="bhtmlcontent">
+                    <?php _e('Blocked code message', 'eu-cookie-law'); ?><br>
+                    <small><?php _e('This is the message that will be displayed for locked-code areas', 'eu-cookie-law'); ?></small></label></th>
 					<td>
 <textarea style='font-size: 90%; width:95%;' name='peadig_eucookie[bhtmlcontent]' id='bhtmlcontent' rows='9' ><?php echo $options['bhtmlcontent']; ?></textarea>
 					</td>
