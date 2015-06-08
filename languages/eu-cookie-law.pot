@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Fri Jun 05 2015 16:34:27 GMT+0200 (ora legale Europa "
 "occidentale)\n"
-"POT-Revision-Date: Fri Jun 05 2015 21:17:57 GMT+0200 (ora legale Europa "
+"POT-Revision-Date: Mon Jun 08 2015 17:04:22 GMT+0200 (ora legale Europa "
 "occidentale)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
@@ -26,122 +26,163 @@ msgstr ""
 "esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: ../class-admin.php:27
+#: ../class-admin.php:34
+msgid "Changelog"
+msgstr ""
+
+#: ../class-admin.php:37
 msgid "Rate us"
 msgstr ""
 
-#: ../class-admin.php:30
+#: ../class-admin.php:40
 msgid "Support"
 msgstr ""
 
-#: ../class-admin.php:40
+#: ../class-admin.php:50
 msgid "Activate"
 msgstr ""
 
-#: ../class-admin.php:44
+#: ../class-admin.php:53
+msgid "Auto Block"
+msgstr ""
+
+#: ../class-admin.php:55
+msgid ""
+"This function will automatically block iframes, embeds and scripts in your "
+"post, pages and widgets."
+msgstr ""
+
+#: ../class-admin.php:57
+msgid "Enable TinyMce Button"
+msgstr ""
+
+#: ../class-admin.php:59
+msgid ""
+"Click here if you want to turn on the tinymce button for manual insertion of "
+"EU Cookie Law shortcodes while editing contents."
+msgstr ""
+
+#: ../class-admin.php:62
 msgid "Cookie acceptance lenght"
 msgstr ""
 
-#: ../class-admin.php:48
+#: ../class-admin.php:66
 msgid "hours"
 msgstr ""
 
-#: ../class-admin.php:50
+#: ../class-admin.php:68
 msgid "days"
 msgstr ""
 
-#: ../class-admin.php:52
+#: ../class-admin.php:70
 msgid "weeks"
 msgstr ""
 
-#: ../class-admin.php:54
+#: ../class-admin.php:72
 msgid "months"
 msgstr ""
 
-#: ../class-admin.php:56
+#: ../class-admin.php:74
 msgid ""
 "Once the user clicks accept the bar will disappear. You can set how long "
 "this will apply for before the bar reappears to the user."
 msgstr ""
 
-#: ../class-admin.php:61
+#: ../class-admin.php:79
 msgid "Appearance"
 msgstr ""
 
-#: ../class-admin.php:63
+#: ../class-admin.php:81
 msgid "Position"
 msgstr ""
 
-#: ../class-admin.php:67
+#: ../class-admin.php:85
 msgid "Bottom Right"
 msgstr ""
 
-#: ../class-admin.php:69
+#: ../class-admin.php:87
 msgid "Top Right"
 msgstr ""
 
-#: ../class-admin.php:71
+#: ../class-admin.php:89
 msgid "Bottom Left"
 msgstr ""
 
-#: ../class-admin.php:73
+#: ../class-admin.php:91
 msgid "Top Left"
 msgstr ""
 
-#: ../class-admin.php:78
+#: ../class-admin.php:96
 msgid "Background Color"
 msgstr ""
 
-#: ../class-admin.php:82
+#: ../class-admin.php:100
 msgid "Font Color"
 msgstr ""
 
-#: ../class-admin.php:87
+#: ../class-admin.php:105
 msgid "Content"
 msgstr ""
 
-#: ../class-admin.php:90
+#: ../class-admin.php:108
 msgid "Bar Message"
 msgstr ""
 
-#: ../class-admin.php:94
+#: ../class-admin.php:112
 msgid "More Info Text"
 msgstr ""
 
-#: ../class-admin.php:98
+#: ../class-admin.php:116
 msgid "Accept Text"
 msgstr ""
 
-#: ../class-admin.php:102
+#: ../class-admin.php:120
 msgid "Bar Link"
 msgstr ""
 
-#: ../class-admin.php:103
+#: ../class-admin.php:121
 msgid "Use this field if you want to link a page instead of showing the popup"
 msgstr ""
 
-#: ../class-admin.php:121
+#: ../class-admin.php:139
 msgid "\"Close Popup\" Text"
 msgstr ""
 
-#: ../class-admin.php:125
+#: ../class-admin.php:143
 msgid "Popup Box Content"
 msgstr ""
 
-#: ../class-admin.php:126
+#: ../class-admin.php:144
 msgid "Use this to add a popup that informs your users about your cookie policy"
 msgstr ""
 
-#: ../class-admin.php:132
+#: ../class-admin.php:150
 msgid "Blocked code message"
 msgstr ""
 
-#: ../class-admin.php:133
+#: ../class-admin.php:151
 msgid "This is the message that will be displayed for locked-code areas"
 msgstr ""
 
-#: ../class-admin.php:141
+#: ../class-admin.php:159
 msgid "Save Changes"
+msgstr ""
+
+#: ../class-frontend.php:184
+msgid "Cookies are enabled"
+msgstr ""
+
+#: ../class-frontend.php:185
+msgid "Revoke cookie consent"
+msgstr ""
+
+#: ../class-frontend.php:199
+msgid "Cookies are disabled"
+msgstr ""
+
+#: ../class-frontend.php:200
+#, php-format
+msgid "Accept Cookies by clicking \"%s\" in the banner."
 msgstr ""
 
 #: ../defaults.php:8

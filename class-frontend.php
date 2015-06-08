@@ -8,19 +8,21 @@ function peadig_eucookie_scripts() {
 add_action('wp_head', 'peadig_eucookie_scripts');
 
 function cookie_accepted() {
+    
+    if ( ! eucookie_option('enabled') ) { return true; }
+    
+    return isset( $_COOKIE['euCookie'] );
+}
+
+function eucookie_option($name) {
     $options = get_option('peadig_eucookie');
-    if ( !$options['enabled'] ) { return true; }
-    if ( $_COOKIE['euCookie'] ) {
-        return true;
-    } else {
-        return false;
-    }
+    if ( isset( $options[$name] ) ) { return $options[$name]; }
+    return false;
 }
 
 function get_expire_timer() {
-    $options = get_option('peadig_eucookie');
-
-    switch($options['length']){
+    
+    switch( eucookie_option('length') ){
         case "hours":
             $multi = (1/24);
             break;
@@ -34,12 +36,7 @@ function get_expire_timer() {
             $multi = 30;
             break;
     }
-    return $multi * $options['lengthnum'];
-}
-
-function eu_cookie_enabled() {
-    $options = get_option('peadig_eucookie');
-    return $options['enabled'];
+    return $multi *  eucookie_option('lengthnum');
 }
     
 function peadig_eucookie_bar() {
@@ -103,8 +100,7 @@ function peadig_eucookie_bar() {
 add_action('wp_footer', 'peadig_eucookie_bar', 1000);
 
 function generate_cookie_notice_text($height, $width, $text) {
-    return '<div class="eucookie" style="width:'.$width.';height:'.$height.';
-        background:url(\''.plugins_url('img/congruent_pentagon.png',__FILE__).'\') repeat;"><span>'.$text.'</span></div><div class="clear"></div>';    
+    return '<div class="eucookie" style="color:'.ecl_frontstyle('fontcolor').'; background-color: rgba('.ecl_frontstyle('backgroundcolor').',0.85);width:'.$width.';height:'.$height.';"><span>'.$text.'</span></div><div class="clear"></div>';    
 }
 
 function generate_cookie_notice($height, $width) {
@@ -130,6 +126,17 @@ function eu_cookie_shortcode( $atts, $content = null ) {
     }
 }
 add_shortcode( 'cookie', 'eu_cookie_shortcode' );
+
+add_filter( 'the_content', 'ecl_erase', 11);
+add_filter( 'widget_display_callback','ecl_erase', 11, 3 );
+function ecl_erase($content) {
+    $options = get_option('peadig_eucookie');
+    if ( !cookie_accepted() && eucookie_option('autoblock') ) {
+        return preg_replace('#<iframe.*?\/iframe>|<embed.*?>|<script.*?\/script>#is', generate_cookie_notice('auto', '100%'), $content);
+    }
+    return $content;
+}
+
 add_filter( 'widget_text', 'do_shortcode');
 
 function pulisci($content,$ricerca){
@@ -158,28 +165,24 @@ function ecl_hex2rgb($hex) {
 }
 
 function ecl_frontstyle($name) {
-    $options = get_option('peadig_eucookie');
     switch ($name) {
     case 'fontcolor':
-        return $options['fontcolor'];
+        return  eucookie_option('fontcolor');
         break;
     case 'backgroundcolor':
-        $backgroundcolors = ecl_hex2rgb($options['backgroundcolor']);
+        $backgroundcolors = ecl_hex2rgb( eucookie_option('backgroundcolor') );
         return $backgroundcolors[0].','.$backgroundcolors[1].','.$backgroundcolors[2];
         break;
-    case 2:
-        echo "i equals 2";
-        break;
-}
+    }
 }
 
 function eu_cookie_control_shortcode( $atts ) {
-    if (!eu_cookie_enabled()) { return; }
+    if ( !eucookie_option('enabled') ) { return; }
     if ( cookie_accepted() ) {
         return '
-            <div class="pea_cook_control">
-                Cookies are currently enabled.
-                <button id="eu_revoke_cookies" class="eu_control_btn" href="#">Revoke Cookies</button>
+            <div class="pea_cook_control" style="color:'.ecl_frontstyle('fontcolor').'; background-color: rgba('.ecl_frontstyle('backgroundcolor').',0.9);">
+                '.__('Cookies are enabled', 'eu-cookie-law').'
+                <button id="eu_revoke_cookies" class="eu_control_btn" href="#">'.__('Revoke cookie consent', 'eu-cookie-law').'</button>
             </div>
             <script type="text/javascript">
             jQuery(document).ready(function($){
@@ -193,23 +196,8 @@ function eu_cookie_control_shortcode( $atts ) {
     } else {
         return '
             <div class="pea_cook_control" style="color:'.ecl_frontstyle('fontcolor').'; background-color: rgba('.ecl_frontstyle('backgroundcolor').',0.9);">
-                Cookies are currently disabled.
-                <button id="eu_revoke_cookies" class="eu_control_btn" href="#">Accept Cookies</button>
-            </div>
-            <script type="text/javascript">
-            jQuery(document).ready(function($){
-				$(".eu_control_btn").click(function() {
-					var expire = new Date();
-                    expire.setDate(expire.getDate() + '.get_expire_timer().');
-                    var isoDate = new Date(expire).toISOString();
-                    document.cookie = "euCookie=set; expires=" + isoDate + "; path=/";
-                    window.location.reload();                    
-                    
-				$(".pea_cook_wrapper").fadeOut("fast");
-                });
-            });
-        </script>';
-        
+                '.__('Cookies are disabled', 'eu-cookie-law').'<br>'.sprintf( __( 'Accept Cookies by clicking "%s" in the banner.', 'eu-cookie-law' ), '<b>'.eucookie_option('barbutton').'</b>' ).'
+            </div>';            
     }
 }
 add_shortcode( 'cookie-control', 'eu_cookie_control_shortcode' );

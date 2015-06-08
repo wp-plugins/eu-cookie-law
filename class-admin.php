@@ -10,6 +10,13 @@ function show_peadig_eucookie_options() {
 	add_options_page('EU Cookie Law', 'EU Cookie Law', 'manage_options', 'peadig_eucookie', 'peadig_eucookie_options');
 }
 
+add_action( 'admin_enqueue_scripts', 'mw_enqueue_color_picker' );
+function mw_enqueue_color_picker( $hook_suffix ) {
+    // first check that $hook_suffix is appropriate for your admin page
+    wp_enqueue_style( 'wp-color-picker' );
+    wp_enqueue_script( 'elc-color-picker', plugins_url('js/eucookiesettings.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
+}
+
 // ADMIN PAGE
 function peadig_eucookie_options() {
 ?>
@@ -23,10 +30,13 @@ function peadig_eucookie_options() {
             </a>
         </div>
 		<h2>EU Cookie Law &bull; <?php echo get_option( 'ecl_version_number' ); ?>
-            <a href="http://wordpress.org/support/view/plugin-reviews/eu-cookie-law" target="_blank" class="add-new-h2">
+            <a href="//wordpress.org/plugins/eu-cookie-law/changelog/" target="_blank" class="add-new-h2">
+                <?php _e('Changelog', 'eu-cookie-law'); ?>
+            </a>
+            <a href="//wordpress.org/support/view/plugin-reviews/eu-cookie-law" target="_blank" class="add-new-h2">
                 <?php _e('Rate us', 'eu-cookie-law'); ?> ★★★★★
             </a>
-            <a href="https://wordpress.org/support/plugin/eu-cookie-law" target="_blank" class="add-new-h2">
+            <a href="//wordpress.org/support/plugin/eu-cookie-law" target="_blank" class="add-new-h2">
                 <?php _e('Support', 'eu-cookie-law'); ?>
             </a>
         </h2>
@@ -40,6 +50,14 @@ function peadig_eucookie_options() {
 				<tr valign="top"><th scope="row"><label for="enabled"><?php _e('Activate'); ?></label></th>
 					<td><input id="enabled" name="peadig_eucookie[enabled]" type="checkbox" value="1" <?php checked('1', $options['enabled']); ?> /></td>
 				</tr>
+                <tr valign="top"><th scope="row"><label for="autoblock"><?php _e('Auto Block'); ?> (beta)</label></th>
+					<td><input id="autoblock" name="peadig_eucookie[autoblock]" type="checkbox" value="1" <?php checked('1', $options['autoblock']); ?> /><br>
+<small><?php _e('This function will automatically block iframes, embeds and scripts in your post, pages and widgets.', 'eu-cookie-law'); ?></small></td>
+				</tr>
+                <tr valign="top"><th scope="row"><label for="tinymcebutton"><?php _e('Enable TinyMce Button'); ?></label></th>
+					<td><input id="tinymcebutton" name="peadig_eucookie[tinymcebutton]" type="checkbox" value="1" <?php checked('1', $options['tinymcebutton']); ?> /><br>
+<small><?php _e('Click here if you want to turn on the tinymce button for manual insertion of EU Cookie Law shortcodes while editing contents.'); ?></small></td>
+				</tr>
 				<tr valign="top"><th scope="row"><label for="lengthnum">
                     <?php _e('Cookie acceptance lenght', 'eu-cookie-law'); ?></label></th>
 					<td><input id="lengthnum" type="text" name="peadig_eucookie[lengthnum]" value="<?php echo $options['lengthnum']; ?>" size="5" /> 
@@ -52,7 +70,7 @@ function peadig_eucookie_options() {
                                   <?php _e('weeks', 'eu-cookie-law'); ?></option>
 							  <option value="months"<?php if ($options['length'] == 'months') { echo ' selected="selected"'; } ?>>
                                   <?php _e('months', 'eu-cookie-law'); ?></option>
-						</select><br />
+						</select><br>
 <small><?php _e('Once the user clicks accept the bar will disappear. You can set how long this will apply for before the bar reappears to the user.', 'eu-cookie-law'); ?></small>
 					</td>
 				</tr>

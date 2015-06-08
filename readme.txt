@@ -1,7 +1,7 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.2.2
-Stable tag:	2.2.2
+Version:	2.3
+Stable tag:	2.3
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy, eu cookie law, italy, cookie, consent, europe
@@ -23,6 +23,7 @@ Demo: [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 = Features =
 * **Customize banner**
 * Block scripts if cookies are not accepted
+* **Automatic block of iframes, embeds, scripts**
 * Set cookie expiry
 * Fully **responsive** for tablets and smartphones
 * Set banner position
@@ -97,6 +98,12 @@ If you think that we should provide more shortcodes, functions, or enhance what 
 4. Example of `[cookie-control]`
 
 == Changelog ==
+
+= 2.3 08.06.2015 =
+* **Added automatic block of iframes, embeds, scripts** (beta)
+* **Added** option to enable/disable tinymce button
+* Performance improvements
+* Minor changes
 
 = 2.2.2 08.06.2015 =
 * **Fixed** conflict with the_content filter

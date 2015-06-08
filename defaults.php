@@ -1,7 +1,7 @@
 <?php
 
     $defaults = array (
-        array('enabled', '1'),
+        array('enabled', '0'),
         array('lengthnum', '1'),
         array('length', 'months'),
         array('position', 'bottomright'),
@@ -12,7 +12,9 @@
         array('boxcontent', __('The cookie settings on this website are set to "allow cookies" to give you the best browsing experience possible. If you continue to use this website without changing your cookie settings or you click "Accept" below then you are consenting to this.', 'eu-cookie-law')),
         array('bhtmlcontent', __('<b>Content not available.</b><br><small>Please allow cookies by clicking Accept on the banner</small>', 'eu-cookie-law')),
         array('backgroundcolor', '#000000'),
-        array('fontcolor', '#FFFFFF')
+        array('fontcolor', '#FFFFFF'),
+        array('autoblock', '0'),
+        array('tinymcebutton', '0')
     );
 
     $my_options = get_option('peadig_eucookie');
