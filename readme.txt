@@ -1,7 +1,7 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.2
-Stable tag:	2.2
+Version:	2.2.1
+Stable tag:	2.2.1
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy, eu cookie law, italy, cookie, consent, europe
@@ -84,8 +84,8 @@ You can easily verify if cookies consent has been set with:
     // Your code
 }`
 However this will limit to not showing the wrapped code. If you want to display a box like when using `[cookie]` shortcode, in  php you have:
-`generate_cookie_notice($height, $width)
-generate_cookie_notice_text($height, $width, $text)`
+`generate_cookie_notice($height, $width);
+generate_cookie_notice_text($height, $width, $text);`
 
 If you think that we should provide more shortcodes, functions, or enhance what we already provide, please let us know in [our forum](https://wordpress.org/support/plugin/eu-cookie-law).
 
@@ -97,6 +97,11 @@ If you think that we should provide more shortcodes, functions, or enhance what 
 4. Example of `[cookie-control]`
 
 == Changelog ==
+
+= 2.2.1 08.06.2015 =
+* **Fixed** expire date bug
+* **Fixed** shortcodes in widgets
+* Minor improvements 
 
 = 2.2 05.06.2015 =
 * **Added** customization options (ex. background+font color)

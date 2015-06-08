@@ -20,25 +20,21 @@ function cookie_accepted() {
 function get_expire_timer() {
     $options = get_option('peadig_eucookie');
 
-        if(!$_COOKIE['euCookie']){
-            //for Cookie
-            switch($options['length']){
-                case "hours":
-                    $multi = (1/24);
-                    break;
-                case "days":
-                    $multi = 1;
-                    break;
-                case "weeks":
-                    $multi = 7;
-                    break;
-                case "months":
-                    $multi = 30;
-                    break;
-            }
-
-                return $multi * $options['lengthnum'];
-        }
+    switch($options['length']){
+        case "hours":
+            $multi = (1/24);
+            break;
+        case "days":
+            $multi = 1;
+            break;
+        case "weeks":
+            $multi = 7;
+            break;
+        case "months":
+            $multi = 30;
+            break;
+    }
+    return $multi * $options['lengthnum'];
 }
 
 function eu_cookie_enabled() {
@@ -94,8 +90,8 @@ function peadig_eucookie_bar() {
 				$('#pea_cook_btn').click(function() {
 					var expire = new Date();
                     expire.setDate(expire.getDate() + <?php echo get_expire_timer(); ?>);
-                    var isoDate = new Date(expire).toISOString();
-                    document.cookie = "euCookie=set; expires=" + isoDate + "; path=/";
+                    var utcDate = new Date(expire).toUTCString();
+                    document.cookie = "euCookie=set; expires=" + utcDate + "; path=/";
                     window.location.reload();                    
                     
 				$(".pea_cook_wrapper").fadeOut("fast");
@@ -134,6 +130,7 @@ function eu_cookie_shortcode( $atts, $content = null ) {
     }
 }
 add_shortcode( 'cookie', 'eu_cookie_shortcode' );
+add_filter( 'widget_text', 'do_shortcode');
 
 function pulisci($content,$ricerca){
 	$caratteri = strlen($ricerca)+6;
