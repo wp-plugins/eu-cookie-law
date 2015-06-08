@@ -24,7 +24,7 @@ function get_expire_timer() {
     
     switch( eucookie_option('length') ){
         case "hours":
-            $multi = (1/24);
+            $multi = 1;
             break;
         case "days":
             $multi = 1;
@@ -40,25 +40,24 @@ function get_expire_timer() {
 }
     
 function peadig_eucookie_bar() {
-    $options = get_option('peadig_eucookie');
     
 	if ( cookie_accepted() ) {
         return;
     }
             
-    if ( $options['boxlinkid'] ) {
-        $link = get_permalink($options['boxlinkid']);
+    if ( eucookie_option('boxlinkid') ) {
+        $link = get_permalink( eucookie_option('boxlinkid') );
     } else {
         $link = '#';
     }
 ?>
         <div
-            class="pea_cook_wrapper pea_cook_<?php echo $options['position']; ?>"
+            class="pea_cook_wrapper pea_cook_<?php echo eucookie_option('position'); ?>"
             style="
                 color:<?php echo ecl_frontstyle('fontcolor'); ?>;
                 background-color: rgba(<?php echo ecl_frontstyle('backgroundcolor'); ?>,0.85);
             ">
-            <p><?php echo $options['barmessage']; ?> <a style="color:<?php echo $options['fontcolor']; ?>;" href="<?php echo $link; ?>" id="fom"><?php echo $options['barlink']; ?></a> <button id="pea_cook_btn" class="pea_cook_btn" href="#"><?php echo $options['barbutton']; ?></button></p>
+            <p><?php echo eucookie_option('barmessage'); ?> <a style="color:<?php echo eucookie_option('fontcolor'); ?>;" href="<?php echo $link; ?>" id="fom"><?php echo eucookie_option('barlink'); ?></a> <button id="pea_cook_btn" class="pea_cook_btn" href="#"><?php echo eucookie_option('barbutton'); ?></button></p>
         </div>
         <div class="pea_cook_more_info_popover">
             <div
@@ -67,8 +66,8 @@ function peadig_eucookie_bar() {
                     color:<?php echo ecl_frontstyle('fontcolor'); ?>;
                     background-color: rgba(<?php echo ecl_frontstyle('backgroundcolor'); ?>,0.9);
                     ">
-             <p><?php echo $options['boxcontent']; ?></p>
-                <p><a style="color:<?php echo $options['fontcolor']; ?>;" href="#" id="pea_close"><?php echo $options['closelink']; ?></a></p>
+             <p><?php echo eucookie_option('boxcontent'); ?></p>
+                <p><a style="color:<?php echo eucookie_option('fontcolor'); ?>;" href="#" id="pea_close"><?php echo eucookie_option('closelink'); ?></a></p>
 			</div>
         </div>
 
@@ -104,16 +103,14 @@ function generate_cookie_notice_text($height, $width, $text) {
 }
 
 function generate_cookie_notice($height, $width) {
-    $options = get_option('peadig_eucookie');
-    return generate_cookie_notice_text($height, $width, $options['bhtmlcontent']);
+    return generate_cookie_notice_text($height, $width, eucookie_option('bhtmlcontent') );
 }
 function eu_cookie_shortcode( $atts, $content = null ) {
-    $options = get_option('peadig_eucookie');
     extract(shortcode_atts(
         array(
             'height' => '',
             'width' => '',
-            'text' => $options['bhtmlcontent']
+            'text' => eucookie_option('bhtmlcontent')
         ),
         $atts)
     );
@@ -130,7 +127,6 @@ add_shortcode( 'cookie', 'eu_cookie_shortcode' );
 add_filter( 'the_content', 'ecl_erase', 11);
 add_filter( 'widget_display_callback','ecl_erase', 11, 3 );
 function ecl_erase($content) {
-    $options = get_option('peadig_eucookie');
     if ( !cookie_accepted() && eucookie_option('autoblock') ) {
         return preg_replace('#<iframe.*?\/iframe>|<embed.*?>|<script.*?\/script>#is', generate_cookie_notice('auto', '100%'), $content);
     }

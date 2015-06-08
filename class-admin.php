@@ -62,8 +62,6 @@ function peadig_eucookie_options() {
                     <?php _e('Cookie acceptance lenght', 'eu-cookie-law'); ?></label></th>
 					<td><input id="lengthnum" type="text" name="peadig_eucookie[lengthnum]" value="<?php echo $options['lengthnum']; ?>" size="5" /> 
 						<select name="peadig_eucookie[length]">
-							  <option value="hours"<?php if ($options['length'] == 'hours') { echo ' selected="selected"'; } ?>>
-                                  <?php _e('hours', 'eu-cookie-law'); ?></option>
 							  <option value="days"<?php if ($options['length'] == 'days') { echo ' selected="selected"'; } ?>>
                                   <?php _e('days', 'eu-cookie-law'); ?></option>
 							  <option value="weeks"<?php if ($options['length'] == 'weeks') { echo ' selected="selected"'; } ?>>

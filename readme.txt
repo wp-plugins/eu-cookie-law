@@ -1,7 +1,7 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.3
-Stable tag:	2.3
+Version:	2.3.1
+Stable tag:	2.3.1
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy, eu cookie law, italy, cookie, consent, europe
@@ -98,6 +98,10 @@ If you think that we should provide more shortcodes, functions, or enhance what 
 4. Example of `[cookie-control]`
 
 == Changelog ==
+
+= 2.3.1 08.06.2015 =
+* Removed "hours" in expiration (it caused bugs with internationalizationation).
+* **Please re-save the field. It will be considered as "days" while calculating expiration date of cookie.**
 
 = 2.3 08.06.2015 =
 * **Added automatic block of iframes, embeds, scripts** (beta)
