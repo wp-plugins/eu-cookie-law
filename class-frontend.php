@@ -122,7 +122,7 @@ function eu_cookie_shortcode( $atts, $content = null ) {
         $atts)
     );
     if ( cookie_accepted() ) {
-        return apply_filters('the_content', $content);
+        return do_shortcode( $content );
     } else {
         if (!$width) { $width = pulisci($content,'width='); }
         if (!$height) { $height = pulisci($content,'height='); }
