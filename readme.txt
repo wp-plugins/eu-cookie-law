@@ -96,6 +96,8 @@ If you think that we should provide more shortcodes, functions, or enhance what 
 2. Example (cookie accepted) - [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 3. Example of the banner
 4. Example of `[cookie-control]`
+5. Plugin Settings
+6. Example of automatic blocked content (YouTube & Google Maps)
 
 == Changelog ==
 
