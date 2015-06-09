@@ -72,6 +72,10 @@ function peadig_eucookie_options() {
 <small><?php _e('Once the user clicks accept the bar will disappear. You can set how long this will apply for before the bar reappears to the user.', 'eu-cookie-law'); ?></small>
 					</td>
 				</tr>
+                <tr valign="top"><th scope="row"><label for="scrollconsent"><?php _e('Scroll Consent'); ?></label></th>
+					<td><input id="scrollconsent" name="peadig_eucookie[scrollconsent]" type="checkbox" value="1" <?php checked('1', $options['scrollconsent']); ?> /><br>
+<small><?php _e('Click here if you want to consider scrolling as cookie acceptation. Users should be informed about this...'); ?></small></td>
+				</tr>
 			</table>
         <hr>
 			<h3 class="title"><?php _e('Appearance'); ?></h3>

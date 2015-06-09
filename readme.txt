@@ -1,7 +1,7 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.3.1
-Stable tag:	2.3.1
+Version:	2.4
+Stable tag:	2.4
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy, eu cookie law, italy, cookie, consent, europe
@@ -90,16 +90,26 @@ generate_cookie_notice_text($height, $width, $text);`
 
 If you think that we should provide more shortcodes, functions, or enhance what we already provide, please let us know in [our forum](https://wordpress.org/support/plugin/eu-cookie-law).
 
+= Auto block (beta) =
+The plugin offers an exclusive function that allows you to block **iframes, embeds, objects and scripts** in posts, pages and widgets. This can be activated in the plugin options panel because is disabled by default.
+
+If you want to exclude a page from being filtered, you can set custom post field name **eucookielaw_exclude** to **1**. To do this, enable "Custom Fields" in "Screen Options". Then in the "Custom Fields" box enter the name, the value, and hit "Add Custom Field".
+
 == Screenshots ==
 
 1. Example (cookie not accepted) - [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 2. Example (cookie accepted) - [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 3. Example of the banner
 4. Example of `[cookie-control]`
-5. Plugin Settings
-6. Example of automatic blocked content (YouTube & Google Maps)
 
 == Changelog ==
+
+= 2.4 09.06.2015 =
+* Added `<objects>` to auto block feature
+* Added ability to exclude pages from auto block feature (see our faqs) (beta)
+* Added option to consider scrolling as acceptation (disabled by default)
+* Improved style.css
+* Remove inline javascript in favor of WordPress enqueue
 
 = 2.3.1 08.06.2015 =
 * Removed "hours" in expiration (it caused bugs with internationalizationation).

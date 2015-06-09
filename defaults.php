@@ -14,7 +14,8 @@
         array('backgroundcolor', '#000000'),
         array('fontcolor', '#FFFFFF'),
         array('autoblock', '0'),
-        array('tinymcebutton', '0')
+        array('tinymcebutton', '0'),
+        array('scrollconsent', '0')
     );
 
     $my_options = get_option('peadig_eucookie');
