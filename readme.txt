@@ -1,7 +1,7 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.4
-Stable tag:	2.4
+Version:	2.4.1
+Stable tag:	2.4.1
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy, eu cookie law, italy, cookie, consent, europe
@@ -10,28 +10,30 @@ Tested up to: 4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-EU Cookie Law informs users that your site has cookies, with a popup for more information and ability to lock scripts before acceptance.
+EU Cookie Law informs users that your site uses cookies, with option to lock scripts before acceptance. Fully customizable.
 
 == Description ==
 
-EU Cookie Law is the easiest, most elegant and complete solution that allows your website to comply the european cookie law by informing users that your site has cookies, with a popup for more information and ability to lock scripts before acceptance. This plugin has been coded to comply the more strict italian law too.
+EU Cookie Law is a **light, easy, elegant and complete** solution that allows your website to comply the european cookie law by informing users that your site has cookies, with a popup for more information and ability to lock scripts before acceptance. This plugin has been coded to comply the more strict italian law too and offers many exclusive features!
 
 https://www.youtube.com/watch?v=6f2qxC3GZJ8
 
 Demo: [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 
-= Features =
+= Basic Features =
 * **Customize banner**
-* Block scripts if cookies are not accepted
-* **Automatic block of iframes, embeds, scripts**
+* Option for consent by scrolling
 * Set cookie expiry
 * Fully **responsive** for tablets and smartphones
 * Set banner position
-* Complete set of developer Shortcodes and PHP Functions
-* Manual and **Automatic** set width and height of blocked content
-
 * Compatible with **multilanguage** plugins
 * Compatible with **mobile** themes and plugins 
+
+= Advanced Features =
+* Block scripts if cookies are not accepted
+* **Automatic block of iframes, embeds, scripts and objects**
+* Complete set of developer Shortcodes and PHP Functions
+* Manual and **Automatic** set width and height of blocked content
 
 Simply install the plugin and follow the instructions on the Settings page.
 
@@ -103,6 +105,10 @@ If you want to exclude a page from being filtered, you can set custom post field
 4. Example of `[cookie-control]`
 
 == Changelog ==
+
+= 2.4.1 10.06.2015 =
+* Solved a conflict with "Register Plus Redux"
+* Minor changes
 
 = 2.4 09.06.2015 =
 * Added `<objects>` to auto block feature

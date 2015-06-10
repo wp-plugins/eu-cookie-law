@@ -10,11 +10,14 @@ function show_peadig_eucookie_options() {
 	add_options_page('EU Cookie Law', 'EU Cookie Law', 'manage_options', 'peadig_eucookie', 'peadig_eucookie_options');
 }
 
-add_action( 'admin_enqueue_scripts', 'mw_enqueue_color_picker' );
-function mw_enqueue_color_picker( $hook_suffix ) {
-    // first check that $hook_suffix is appropriate for your admin page
-    wp_enqueue_style( 'wp-color-picker' );
-    wp_enqueue_script( 'elc-color-picker', plugins_url('js/eucookiesettings.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
+add_action( 'admin_enqueue_scripts', 'ecl_enqueue_color_picker' );
+function ecl_enqueue_color_picker( $hook_suffix ) {
+    $screen = get_current_screen();
+
+    if ( $screen->id == 'settings_page_peadig_eucookie') {
+        wp_enqueue_style( 'wp-color-picker' );
+        wp_enqueue_script( 'elc-color-picker', plugins_url('js/eucookiesettings.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
+    }
 }
 
 // ADMIN PAGE
