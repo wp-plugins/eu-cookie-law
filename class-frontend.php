@@ -24,7 +24,6 @@ add_action('wp_head', 'peadig_eucookie_scripts');
 function cookie_accepted() {
     
     if ( ! eucookie_option('enabled') ) { return true; }
-    define('DONOTCACHEPAGE',1);
     
     if ( isset( $_COOKIE['euCookie'] ) ) {
         return true;

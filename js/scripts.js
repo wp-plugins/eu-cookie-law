@@ -31,10 +31,9 @@ jQuery(document).ready(function($){
 	});
 	
 	function euCookieConsent() {
-		var expire = new Date();
-		expire.setDate(expire.getDate() + expireTimer );
-		var utcDate = new Date(expire).toUTCString();
-		document.cookie = "euCookie=set; expires=" + utcDate + "; path=/";
+		var today = new Date(), expire = new Date();
+		expire.setTime(today.getTime() + (expireTimer * 24 * 60 * 60 * 1000) );
+		document.cookie = "euCookie=set; expires=" + expire.toUTCString() + "; path=/";
 		window.location.reload();
 	}
 });

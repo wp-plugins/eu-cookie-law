@@ -1,7 +1,7 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.4.1
-Stable tag:	2.4.1
+Version:	2.4.2
+Stable tag:	2.4.2
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy, eu cookie law, italy, cookie, consent, europe
@@ -105,6 +105,9 @@ If you want to exclude a page from being filtered, you can set custom post field
 4. Example of `[cookie-control]`
 
 == Changelog ==
+
+= 2.4.2 11.06.2015 =
+* Fixed occasional wrong date when setting cookies
 
 = 2.4.1 10.06.2015 =
 * Solved a conflict with "Register Plus Redux"
