@@ -1,7 +1,7 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.4.2
-Stable tag:	2.4.2
+Version:	2.5
+Stable tag:	2.5
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy, eu cookie law, italy, cookie, consent, europe
@@ -21,13 +21,14 @@ https://www.youtube.com/watch?v=6f2qxC3GZJ8
 Demo: [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 
 = Basic Features =
-* **Customize banner**
+* **Customizable banner**
 * Option for consent by scrolling
+* Option for acceptance if user continues navigation
 * Set cookie expiry
 * Fully **responsive** for tablets and smartphones
 * Set banner position
-* Compatible with **multilanguage** plugins
 * Compatible with **mobile** themes and plugins 
+* Compatible with **multilanguage** plugins
 
 = Advanced Features =
 * Block scripts if cookies are not accepted
@@ -105,6 +106,11 @@ If you want to exclude a page from being filtered, you can set custom post field
 4. Example of `[cookie-control]`
 
 == Changelog ==
+
+= 2.5 24.06.2015 =
+* Removed acceptance on scroll while in cookie page
+* Added Continue Navigation acceptance (beta)
+* Added Multisite Support (beta)
 
 = 2.4.2 11.06.2015 =
 * Fixed occasional wrong date when setting cookies

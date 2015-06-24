@@ -6,7 +6,10 @@ function peadig_eucookie_scripts() {
     
     $eclData = array(
         'expireTimer' => get_expire_timer(),
-        'scrollConsent' => eucookie_option('scrollconsent')
+        'scrollConsent' => eucookie_option('scrollconsent'),
+        'networkShareURL' => ecl_get_cookie_domain(),
+        'isCookiePage' => eucookie_option('boxlinkid') == get_the_ID(),
+        'isRefererWebsite' => eucookie_option('navigationconsent') && wp_get_referer()
     );
     
     wp_enqueue_script(
@@ -20,6 +23,14 @@ function peadig_eucookie_scripts() {
     
 }
 add_action('wp_head', 'peadig_eucookie_scripts');
+
+function ecl_get_cookie_domain() {
+    
+    if ( !eucookie_option('networkshare') ) {
+        return false;
+    }
+    return 'domain='.eucookie_option('networkshareurl').'; ';
+}
 
 function cookie_accepted() {
     

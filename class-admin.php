@@ -53,7 +53,7 @@ function peadig_eucookie_options() {
 				<tr valign="top"><th scope="row"><label for="enabled"><?php _e('Activate'); ?></label></th>
 					<td><input id="enabled" name="peadig_eucookie[enabled]" type="checkbox" value="1" <?php checked('1', $options['enabled']); ?> /></td>
 				</tr>
-                <tr valign="top"><th scope="row"><label for="autoblock"><?php _e('Auto Block'); ?> (beta)</label></th>
+                <tr valign="top"><th scope="row"><label for="autoblock"><?php _e('Auto Block'); ?><br>(BETA)</label></th>
 					<td><input id="autoblock" name="peadig_eucookie[autoblock]" type="checkbox" value="1" <?php checked('1', $options['autoblock']); ?> /><br>
 <small><?php _e('This function will automatically block iframes, embeds and scripts in your post, pages and widgets.', 'eu-cookie-law'); ?></small></td>
 				</tr>
@@ -78,6 +78,18 @@ function peadig_eucookie_options() {
                 <tr valign="top"><th scope="row"><label for="scrollconsent"><?php _e('Scroll Consent'); ?></label></th>
 					<td><input id="scrollconsent" name="peadig_eucookie[scrollconsent]" type="checkbox" value="1" <?php checked('1', $options['scrollconsent']); ?> /><br>
 <small><?php _e('Click here if you want to consider scrolling as cookie acceptation. Users should be informed about this...'); ?></small></td>
+				</tr>
+                <tr valign="top"><th scope="row"><label for="navigationconsent"><?php _e('Navigation Consent'); ?> (beta)</label></th>
+					<td><input id="navigationconsent" name="peadig_eucookie[navigationconsent]" type="checkbox" value="1" <?php checked('1', $options['navigationconsent']); ?> /><br>
+<small><?php _e('Click here if you want to consider continuing navigation as cookie acceptation. Users should be informed about this...'); ?></small></td>
+				</tr>
+                <tr valign="top"><th scope="row"><label for="networkshare"><?php _e('Share Cookie across Network'); ?><br>(BETA)</label></th>
+					<td><input id="networkshare" name="peadig_eucookie[networkshare]" type="checkbox" value="1" <?php checked('1', $options['networkshare']); ?> /><br>
+<small><?php _e('Click here if you want to share euCookie across your network (subdomains or multisite)'); ?></small></td>
+				</tr>
+                <tr valign="top"><th scope="row"><label for="networkshareurl">
+                    <?php _e('Network Domain', 'eu-cookie-law'); ?></label></th>
+					<td><input id="networkshareurl" type="text" name="peadig_eucookie[networkshareurl]" value="<?php echo $options['networkshareurl']; ?>" size="40" /></td>
 				</tr>
 			</table>
         <hr>
