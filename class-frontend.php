@@ -75,7 +75,8 @@ function peadig_eucookie_bar() {
     }
             
     if ( eucookie_option('boxlinkid') ) {
-        $link = get_permalink( eucookie_option('boxlinkid') );
+        $linkid = apply_filters( 'wpml_object_id', eucookie_option('boxlinkid'), 'page' );
+        $link = get_permalink( $linkid );
     } else {
         $link = '#';
     }
@@ -129,11 +130,24 @@ function eu_cookie_shortcode( $atts, $content = null ) {
 }
 add_shortcode( 'cookie', 'eu_cookie_shortcode' );
 
-add_filter( 'the_content', 'ecl_erase', 11);
-add_filter( 'widget_display_callback','ecl_erase', 11, 3 );
+function ecl_callback($buffer) {
+  // modify buffer here, and then return the updated code
+  return ecl_erase($buffer);
+}
+
+function ecl_buffer_start() { ob_start("ecl_callback"); }
+
+function ecl_buffer_end() { ob_end_flush(); }
+
+add_action('wp_head', 'ecl_buffer_start');
+add_action('wp_footer', 'ecl_buffer_end');
+
 function ecl_erase($content) {
     if ( !cookie_accepted() && eucookie_option('autoblock') && !get_post_field( 'eucookielaw_exclude', get_the_id() ) ) {
-        return preg_replace('#<iframe.*?\/iframe>|<object.+?</object>|<embed.*?>|<script.*?\/script>#is', generate_cookie_notice('auto', '100%'), $content);
+        $content = preg_replace('#<iframe.*?\/iframe>|<object.+?</object>|<embed.*?>#is', generate_cookie_notice('auto', '100%'), $content);
+        $content = preg_replace('#<script.*?\/script>#is', '', $content);
+        $content = preg_replace('#<!cookie_start.*?\!cookie_end>#is', generate_cookie_notice('auto', '100%'), $content);
+        $content = preg_replace('#<div id=\"disqus_thread\".*?\/div>#is', generate_cookie_notice('auto', '100%'), $content);
     }
     return $content;
 }

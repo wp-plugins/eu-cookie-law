@@ -1,7 +1,7 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.5
-Stable tag:	2.5
+Version:	2.5.1
+Stable tag:	2.5.1
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy, eu cookie law, italy, cookie, consent, europe
@@ -28,7 +28,7 @@ Demo: [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 * Fully **responsive** for tablets and smartphones
 * Set banner position
 * Compatible with **mobile** themes and plugins 
-* Compatible with **multilanguage** plugins
+* Compatible with **multilanguage** plugins (certified for **WPML**)
 
 = Advanced Features =
 * Block scripts if cookies are not accepted
@@ -106,6 +106,12 @@ If you want to exclude a page from being filtered, you can set custom post field
 4. Example of `[cookie-control]`
 
 == Changelog ==
+
+= 2.5.1 03.07.2015 =
+* Compatible with **WPML**
+* Better AutoBlock function (Disqus block included!)
+* Now scripts block doesn't generate the message (limited for iframe, object and embed)		
+* Minor changes			
 
 = 2.5 24.06.2015 =
 * Removed acceptance on scroll while in cookie page

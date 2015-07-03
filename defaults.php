@@ -18,6 +18,7 @@
         array('scrollconsent', '0'),
         array('navigationconsent', '0'),
         array('networkshare', '0'),
+        array('onlyeuropean', '0'),
         array('networkshareurl', ecl_getshareurl())
     );
 

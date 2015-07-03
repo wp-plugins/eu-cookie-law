@@ -79,7 +79,7 @@ function peadig_eucookie_options() {
 					<td><input id="scrollconsent" name="peadig_eucookie[scrollconsent]" type="checkbox" value="1" <?php checked('1', $options['scrollconsent']); ?> /><br>
 <small><?php _e('Click here if you want to consider scrolling as cookie acceptation. Users should be informed about this...'); ?></small></td>
 				</tr>
-                <tr valign="top"><th scope="row"><label for="navigationconsent"><?php _e('Navigation Consent'); ?> (beta)</label></th>
+                <tr valign="top"><th scope="row"><label for="navigationconsent"><?php _e('Navigation Consent'); ?></label></th>
 					<td><input id="navigationconsent" name="peadig_eucookie[navigationconsent]" type="checkbox" value="1" <?php checked('1', $options['navigationconsent']); ?> /><br>
 <small><?php _e('Click here if you want to consider continuing navigation as cookie acceptation. Users should be informed about this...'); ?></small></td>
 				</tr>

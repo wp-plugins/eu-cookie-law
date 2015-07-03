@@ -28,8 +28,7 @@ jQuery(document).ready(function($){
 	});
 	
 	jQuery(window).scroll(function(){
-		if ( scrollConsent > 0 && document.cookie.indexOf("euCookie") < 0 ) {	
-			console.log('fail');
+		if ( scrollConsent > 0 && document.cookie.indexOf("euCookie") < 0 ) {
 			if (isCookiePage) { return; }
 			euCookieConsent();
 		}	
