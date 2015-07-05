@@ -130,17 +130,16 @@ function eu_cookie_shortcode( $atts, $content = null ) {
 }
 add_shortcode( 'cookie', 'eu_cookie_shortcode' );
 
-function ecl_callback($buffer) {
-  // modify buffer here, and then return the updated code
-  return ecl_erase($buffer);
-}
+function ecl_callback($buffer) { return ecl_erase($buffer); }
 
-function ecl_buffer_start() { ob_start("ecl_callback"); }
+add_filter( 'the_content', 'ecl_erase', 11); 
+add_filter( 'widget_display_callback','ecl_erase', 11, 3 ); 
 
-function ecl_buffer_end() { ob_end_flush(); }
+function ecl_buffer_start() { ob_start("ecl_callback"); } 
+function ecl_buffer_end() { ob_end_flush();	}
 
-add_action('wp_head', 'ecl_buffer_start');
-add_action('wp_footer', 'ecl_buffer_end');
+add_action('wp_head', 'ecl_buffer_start'); 
+add_action('wp_footer', 'ecl_buffer_end'); 
 
 function ecl_erase($content) {
     if ( !cookie_accepted() && eucookie_option('autoblock') && !get_post_field( 'eucookielaw_exclude', get_the_id() ) ) {
