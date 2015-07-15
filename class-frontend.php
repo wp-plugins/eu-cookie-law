@@ -1,15 +1,32 @@
-<?php
+<?php    
 
-function peadig_eucookie_scripts() {
+    $euCookieSet = 0;
+
+function eucookie_scripts() {
+    
+    global $euCookieSet;
+    global $deleteCookieUrlCheck;
+    
+    if ( isset($_GET['nocookie']) ) {
+        unset($_COOKIE['euCookie']);
+        setcookie('euCookie', '', time() - 3600, '/'); 
+        $euCookieSet = 0;
+    } else if (  wp_get_referer() && eucookie_option('navigationconsent') && (!cookie_accepted()) && (eucookie_option('boxlinkid') != get_the_ID()) ) {
+        setcookie('euCookie', 'set', time()+get_expire_timer()*60*60*24, '/', eucookie_option('networkshareurl'));
+        $euCookieSet = 1;
+    }
+    
 	wp_register_style	('basecss', plugins_url('css/style.css', __FILE__), false);
 	wp_enqueue_style	('basecss');
     
     $eclData = array(
+        'euCookieSet' => $euCookieSet,
         'expireTimer' => get_expire_timer(),
         'scrollConsent' => eucookie_option('scrollconsent'),
         'networkShareURL' => ecl_get_cookie_domain(),
         'isCookiePage' => eucookie_option('boxlinkid') == get_the_ID(),
-        'isRefererWebsite' => eucookie_option('navigationconsent') && wp_get_referer()
+        'isRefererWebsite' => eucookie_option('navigationconsent') && wp_get_referer(),
+        'deleteCookieUrl' => esc_url( add_query_arg( 'nocookie', '1', get_permalink() ) )
     );
     
     wp_enqueue_script(
@@ -22,7 +39,7 @@ function peadig_eucookie_scripts() {
     wp_localize_script('eucookielaw-scripts','eucookielaw_data',$eclData);
     
 }
-add_action('wp_head', 'peadig_eucookie_scripts');
+add_action('wp_head', 'eucookie_scripts');
 
 function ecl_get_cookie_domain() {
     
@@ -33,20 +50,15 @@ function ecl_get_cookie_domain() {
 }
 
 function cookie_accepted() {
+    global $euCookieSet;
     
     if ( ! eucookie_option('enabled') ) { return true; }
     
-    if ( isset( $_COOKIE['euCookie'] ) ) {
+    if ( isset( $_COOKIE['euCookie'] ) || $euCookieSet ) {
         return true;
     } else {
         return false;
     }
-}
-
-function eucookie_option($name) {
-    $options = get_option('peadig_eucookie');
-    if ( isset( $options[$name] ) ) { return $options[$name]; }
-    return false;
 }
 
 function get_expire_timer() {
@@ -70,7 +82,7 @@ function get_expire_timer() {
     
 function peadig_eucookie_bar() {
     
-	if ( ! (eucookie_option('enabled') && !isset( $_COOKIE['euCookie'] ) )  ) {
+	if ( cookie_accepted()  ) {
         return;
     }
             
@@ -194,7 +206,7 @@ function eu_cookie_control_shortcode( $atts ) {
         return '
             <div class="pea_cook_control" style="color:'.ecl_frontstyle('fontcolor').'; background-color: rgba('.ecl_frontstyle('backgroundcolor').',0.9);">
                 '.__('Cookies are enabled', 'eu-cookie-law').'
-                <button id="eu_revoke_cookies" class="eu_control_btn" href="#">'.__('Revoke cookie consent', 'eu-cookie-law').'</button>
+                <button id="eu_revoke_cookies" class="eu_control_btn">'.__('Revoke cookie consent', 'eu-cookie-law').'</button>
             </div>';
     } else {
         return '

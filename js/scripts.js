@@ -1,14 +1,15 @@
 jQuery(document).ready(function($){
 
+	var euCookieSet =  eucookielaw_data.euCookieSet;
 	var expireTimer = eucookielaw_data.expireTimer;
 	var scrollConsent = eucookielaw_data.scrollConsent;
 	var networkShareURL = eucookielaw_data.networkShareURL;
 	var isCookiePage = eucookielaw_data.isCookiePage;
 	var isRefererWebsite = eucookielaw_data.isRefererWebsite;
+	var deleteCookieUrl = eucookielaw_data.deleteCookieUrl;
 	
 	$(".eu_control_btn").click(function() {
-		document.cookie = "euCookie=set; Max-Age=0; path=/";
-		window.location.reload();
+		window.location.replace(deleteCookieUrl);
 	});
 	
 	$("#fom").click(function() {
@@ -28,14 +29,15 @@ jQuery(document).ready(function($){
 	});
 	
 	jQuery(window).scroll(function(){
-		if ( scrollConsent > 0 && document.cookie.indexOf("euCookie") < 0 ) {
-			if (isCookiePage) { return; }
-			euCookieConsent();
+		if ( scrollConsent > 0 && document.cookie.indexOf("euCookie") < 0 && !euCookieSet ) {
+			if (!isCookiePage) {
+				euCookieConsent();
+			}
 		}	
 	});
 	
-	if (isRefererWebsite && !isCookiePage && document.cookie.indexOf("euCookie") < 0 ) { euCookieConsent(); }
-	
+	//if (isRefererWebsite && !isCookiePage && document.cookie.indexOf("euCookie") < 0 ) { euCookieConsent(); }
+
 	function euCookieConsent() {
 		var today = new Date(), expire = new Date();
 		expire.setTime(today.getTime() + (expireTimer * 24 * 60 * 60 * 1000) );
