@@ -20,7 +20,7 @@ https://www.youtube.com/watch?v=6f2qxC3GZJ8
 
 Demo: [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 
-= Basic Features =
+= Features =
 * **Customizable banner**
 * Option for consent by scrolling
 * Option for acceptance if user continues navigation
@@ -29,6 +29,7 @@ Demo: [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 * Set banner position
 * Compatible with **mobile** themes and plugins 
 * Compatible with **multilanguage** plugins (certified for **WPML**)
+* 2-layer cookie prevention with Disqus block
 
 = Advanced Features =
 * Block scripts if cookies are not accepted
@@ -82,6 +83,9 @@ Parameters:
 To display a box (in pages/posts) with ability to revoke consent (if cookies accepted) or accept cookies (if not done yet):
 `[cookie-control]`
 
+You can also create your own link that revokes cookie consent. Just append **?nocookie=1** to your url.
+Ex. wordpress.org/**?nocookie=1** or wordpress.org/something/**?nocookie=1**
+
 = PHP Functions available =
 You can easily verify if cookies consent has been set with:
 `if ( function_exists('cookie_accepted') && cookie_accepted() ) {
@@ -90,6 +94,8 @@ You can easily verify if cookies consent has been set with:
 However this will limit to not showing the wrapped code. If you want to display a box like when using `[cookie]` shortcode, in  php you have:
 `generate_cookie_notice($height, $width);
 generate_cookie_notice_text($height, $width, $text);`
+
+Please note that **cookie_accepted** returns true if Eu Cookie Law plugin is set to disabled in settings panel.
 
 If you think that we should provide more shortcodes, functions, or enhance what we already provide, please let us know in [our forum](https://wordpress.org/support/plugin/eu-cookie-law).
 
@@ -106,6 +112,11 @@ If you want to exclude a page from being filtered, you can set custom post field
 4. Example of `[cookie-control]`
 
 == Changelog ==
+
+= 2.5.3 15.07.2015 =
+* Improved navigation consent (now it doesn't reload the page)
+* Improved performance (load twice faster than 2.5.2)
+* Added parameter to allow you to create links to revoke cookie consent (sperimental)
 
 = 2.5.2 05.07.2015 =
 * Improved autoblock
