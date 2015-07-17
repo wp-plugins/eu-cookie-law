@@ -1,7 +1,7 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.5.3
-Stable tag:	2.5.3
+Version:	2.5.4
+Stable tag:	2.5.4
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy, eu cookie law, italy, cookie, consent, europe
@@ -10,11 +10,13 @@ Tested up to: 4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-EU Cookie Law informs users that your site uses cookies, with option to lock scripts before acceptance. Fully customizable.
+EU Cookie Law informs users that your site uses cookies, with option to lock scripts before consent. Light + Customizable style.
 
 == Description ==
 
-EU Cookie Law is a **light, easy, elegant and complete** solution that allows your website to comply the european cookie law by informing users that your site has cookies, with a popup for more information and ability to lock scripts before acceptance. This plugin has been coded to comply the more strict italian law too and offers many exclusive features!
+EU Cookie Law is a **light, elegant and powerful** solution that allows your website to comply the european cookie law by informing users that your site has cookies, with a popup for more information and option to lock scripts before acceptance (as required by  **Italian Law - Garante della Privacy** dispositions).
+
+You can customise the style to perfectly fit your website and you have many options to control cookies behaviour after and before acceptance.
 
 https://www.youtube.com/watch?v=6f2qxC3GZJ8
 
@@ -28,8 +30,10 @@ Demo: [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 * Fully **responsive** for tablets and smartphones
 * Set banner position
 * Compatible with **mobile** themes and plugins 
-* Compatible with **multilanguage** plugins (certified for **WPML**)
-* 2-layer cookie prevention with Disqus block
+* Compatible with **multilanguage** plugins
+* Certified for **WPML**
+* 2-layer cookie prevention
+* Works with Disqus
 
 = Advanced Features =
 * Block scripts if cookies are not accepted
@@ -51,10 +55,11 @@ You can lock cookies using `[cookie]` and `[/cookie]` shortcodes in every post, 
 
 = Included Languages =
 
-* English (EN) - Authors
-* Italian (IT) - Authors
+* English (EN)
+* Italian (IT)
 
 If you want to help out, we have included the .pot file in /language folder.
+You can send them to milesimarco@outlook.com
 
 = Contributions =
 
@@ -91,27 +96,61 @@ You can easily verify if cookies consent has been set with:
 `if ( function_exists('cookie_accepted') && cookie_accepted() ) {
     // Your code
 }`
-However this will limit to not showing the wrapped code. If you want to display a box like when using `[cookie]` shortcode, in  php you have:
+However this will only hide wrapped code. If you want to display an info box, in php you have:
 `generate_cookie_notice($height, $width);
-generate_cookie_notice_text($height, $width, $text);`
+generate_cookie_notice_text($height, $width, $text);
+
+if ( function_exists('cookie_accepted') && cookie_accepted() ) {
+    // Your code
+} else {
+	generate_cookie_notice($height, $width);
+}`
+(if you omit `$text` then the default one will be used)
 
 Please note that **cookie_accepted** returns true if Eu Cookie Law plugin is set to disabled in settings panel.
 
 If you think that we should provide more shortcodes, functions, or enhance what we already provide, please let us know in [our forum](https://wordpress.org/support/plugin/eu-cookie-law).
 
-= Auto block (beta) =
+= Auto block (sperimental*) =
 The plugin offers an exclusive function that allows you to block **iframes, embeds, objects and scripts** in posts, pages and widgets. This can be activated in the plugin options panel because is disabled by default.
 
 If you want to exclude a page from being filtered, you can set custom post field name **eucookielaw_exclude** to **1**. To do this, enable "Custom Fields" in "Screen Options". Then in the "Custom Fields" box enter the name, the value, and hit "Add Custom Field".
 
+= Cache =
+We are working to get the plugin fully compatible with most cache plugins.
+At the moment using a cache service could create conflicts with the plugin.
+
+**WP Super Cache** (sperimental*): open the file wp-content/advanced-cache.php and add the following immediately after <?php opening:
+`if ( !isset( $_COOKIE['euCookie'] ) ){ return; }`
+
+So that you have:
+`<?php
+if ( !isset( $_COOKIE['euCookie'] ) ){ return; }
+# WP SUPER CACHE 1.2
+function wpcache_broken_message() {`
+
+* = some features in this page are marked with "sperimental". It means that we are testing these functions. We highly suggest you to check this page regularly if you are using one of these.
+
 == Screenshots ==
 
-1. Example (cookie not accepted) - [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
-2. Example (cookie accepted) - [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
-3. Example of the banner
-4. Example of `[cookie-control]`
+1. Banner example - [www.icscarpa.it](http://www.icscarpa.gov.it)
+2. Autoblock feature (no consent) - [www.comune.carassai.ap.it](http://www.comune.carassai.ap.it)
+3. Autoblock feature (no consent) - [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
+4. Autoblock feature (cookies accepted) - [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
+5. Banner example
+6. Autoblock feature (iframe, embed, Google Maps, Disqus,...)
+7. `[cookie-control]` shortcode
+8. Options screen
+9. Fully customizable
 
 == Changelog ==
+
+= 2.5.4 17.07.2015 =
+* Minor changes
+* Added WP Super Cache tips in faqs (sperimental)
+* Added Revoke Consent Link in faqs
+* Improved faqs
+* New banner
 
 = 2.5.3 15.07.2015 =
 * Improved navigation consent (now it doesn't reload the page)

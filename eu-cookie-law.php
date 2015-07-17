@@ -2,8 +2,8 @@
 /*
 Plugin Name:  EU Cookie Law
 Plugin URI:   https://wordpress.org/plugins/eu-cookie-law/
-Description:  Cookie Law informs users that your site has cookies, with a popup for more information and ability to lock scripts before acceptance.
-Version:      2.5.3
+Description:  EU Cookie Law informs users that your site uses cookies, with option to lock scripts before consent. Light + Customizable style.
+Version:      2.5.4
 Author:       Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://wordpress.org/plugins/eu-cookie-law/
 Contributors: alexmoss, Milmor, peer, ShaneJones
