@@ -51,13 +51,13 @@ You can lock cookies using `[cookie]` and `[/cookie]` shortcodes in every post, 
 
 **More Shortcodes & PHP Functions are available [in our faqs](//wordpress.org/plugins/eu-cookie-law/faq/).**
 
-> EU Cookie Law started from [Peadig](//peadig.com/wordpress-plugins/eu-cookie-law/) in 2012 and in june 2015 has became part of [WPGov.it](http://www.wpgov.it) that aims to give Italian Public Government powerful open source solutions for websites.
+> EU Cookie Law started from [Peadig](http://peadig.com/wordpress-plugins/eu-cookie-law/) in 2012 and in june 2015 has became part of [WPGov.it](http://www.wpgov.it) that aims to give Italian Public Government powerful open source solutions for websites.
 
 = Included Languages =
 
 * English (default)
 * Italian (it_IT)
-* Dutch (nl_NL) - [Gerard Weijer](//gerardweijer.nl)
+* Dutch (nl_NL) - [Gerard Weijer](http://gerardweijer.nl)
 
 If you want to help out, we have included the .pot file in /language folder.
 You can send them to milesimarco@outlook.com
@@ -147,7 +147,7 @@ function wpcache_broken_message() {`
 == Changelog ==
 
 = 2.5.5 19.07.2015 =
-* Added Dutch (nl_NL) by [Gerard Weijer](//gerardweijer.nl)
+* Added Dutch (nl_NL) by [Gerard Weijer](http://gerardweijer.nl)
 
 = 2.5.4 17.07.2015 =
 * Minor changes
