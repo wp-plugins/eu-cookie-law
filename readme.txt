@@ -1,7 +1,7 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.5.4
-Stable tag:	2.5.4
+Version:	2.5.5
+Stable tag:	2.5.5
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy, eu cookie law, italy, cookie, consent, europe
@@ -49,14 +49,15 @@ You can lock cookies using `[cookie]` and `[/cookie]` shortcodes in every post, 
     // Your code
 }`
 
-**More Shortcodes & PHP Functions are available [in our faqs](https://wordpress.org/plugins/eu-cookie-law/faq/).**
+**More Shortcodes & PHP Functions are available [in our faqs](//wordpress.org/plugins/eu-cookie-law/faq/).**
 
-> EU Cookie Law started from [Peadig](http://peadig.com/wordpress-plugins/eu-cookie-law/) in 2012 and in june 2015 has became part of [WPGov.it](http://www.wpgov.it) that aims to give Italian Public Government powerful open source solutions for websites.
+> EU Cookie Law started from [Peadig](//peadig.com/wordpress-plugins/eu-cookie-law/) in 2012 and in june 2015 has became part of [WPGov.it](http://www.wpgov.it) that aims to give Italian Public Government powerful open source solutions for websites.
 
 = Included Languages =
 
-* English (EN)
-* Italian (IT)
+* English (default)
+* Italian (it_IT)
+* Dutch (nl_NL) - [Gerard Weijer](//gerardweijer.nl)
 
 If you want to help out, we have included the .pot file in /language folder.
 You can send them to milesimarco@outlook.com
@@ -144,6 +145,9 @@ function wpcache_broken_message() {`
 9. Fully customizable
 
 == Changelog ==
+
+= 2.5.5 19.07.2015 =
+* Added Dutch (nl_NL) by [Gerard Weijer](//gerardweijer.nl)
 
 = 2.5.4 17.07.2015 =
 * Minor changes
