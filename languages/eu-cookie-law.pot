@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Fri Jun 05 2015 16:34:27 GMT+0200 (ora legale Europa "
 "occidentale)\n"
-"POT-Revision-Date: Mon Jun 08 2015 17:04:22 GMT+0200 (ora legale Europa "
+"POT-Revision-Date: Mon Jul 20 2015 20:40:43 GMT+0200 (ora legale Europa "
 "occidentale)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
@@ -26,161 +26,191 @@ msgstr ""
 "esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: ../class-admin.php:34
+#: ../class-admin.php:37
 msgid "Changelog"
 msgstr ""
 
-#: ../class-admin.php:37
+#: ../class-admin.php:40
 msgid "Rate us"
 msgstr ""
 
-#: ../class-admin.php:40
+#: ../class-admin.php:43
 msgid "Support"
 msgstr ""
 
-#: ../class-admin.php:50
+#: ../class-admin.php:53
 msgid "Activate"
 msgstr ""
 
-#: ../class-admin.php:53
+#: ../class-admin.php:56
 msgid "Auto Block"
 msgstr ""
 
-#: ../class-admin.php:55
+#: ../class-admin.php:58
 msgid ""
 "This function will automatically block iframes, embeds and scripts in your "
 "post, pages and widgets."
 msgstr ""
 
-#: ../class-admin.php:57
+#: ../class-admin.php:60
 msgid "Enable TinyMce Button"
 msgstr ""
 
-#: ../class-admin.php:59
+#: ../class-admin.php:62
 msgid ""
 "Click here if you want to turn on the tinymce button for manual insertion of "
 "EU Cookie Law shortcodes while editing contents."
 msgstr ""
 
-#: ../class-admin.php:62
+#: ../class-admin.php:65
 msgid "Cookie acceptance lenght"
 msgstr ""
 
-#: ../class-admin.php:66
-msgid "hours"
-msgstr ""
-
-#: ../class-admin.php:68
+#: ../class-admin.php:69
 msgid "days"
 msgstr ""
 
-#: ../class-admin.php:70
+#: ../class-admin.php:71
 msgid "weeks"
 msgstr ""
 
-#: ../class-admin.php:72
+#: ../class-admin.php:73
 msgid "months"
 msgstr ""
 
-#: ../class-admin.php:74
+#: ../class-admin.php:75
 msgid ""
 "Once the user clicks accept the bar will disappear. You can set how long "
 "this will apply for before the bar reappears to the user."
 msgstr ""
 
-#: ../class-admin.php:79
-msgid "Appearance"
+#: ../class-admin.php:78
+msgid "Scroll Consent"
 msgstr ""
 
-#: ../class-admin.php:81
-msgid "Position"
+#: ../class-admin.php:80
+msgid ""
+"Click here if you want to consider scrolling as cookie acceptation. Users "
+"should be informed about this..."
 msgstr ""
 
-#: ../class-admin.php:85
-msgid "Bottom Right"
+#: ../class-admin.php:82
+msgid "Navigation Consent"
 msgstr ""
 
-#: ../class-admin.php:87
-msgid "Top Right"
+#: ../class-admin.php:84
+msgid ""
+"Click here if you want to consider continuing navigation as cookie "
+"acceptation. Users should be informed about this..."
 msgstr ""
 
-#: ../class-admin.php:89
-msgid "Bottom Left"
+#: ../class-admin.php:86
+msgid "Share Cookie across Network"
+msgstr ""
+
+#: ../class-admin.php:88
+msgid ""
+"Click here if you want to share euCookie across your network (subdomains or "
+"multisite)"
 msgstr ""
 
 #: ../class-admin.php:91
-msgid "Top Left"
+msgid "Network Domain"
 msgstr ""
 
 #: ../class-admin.php:96
-msgid "Background Color"
+msgid "Appearance"
 msgstr ""
 
-#: ../class-admin.php:100
-msgid "Font Color"
+#: ../class-admin.php:98
+msgid "Position"
 msgstr ""
 
-#: ../class-admin.php:105
-msgid "Content"
+#: ../class-admin.php:102
+msgid "Bottom Right"
+msgstr ""
+
+#: ../class-admin.php:104
+msgid "Top Right"
+msgstr ""
+
+#: ../class-admin.php:106
+msgid "Bottom Left"
 msgstr ""
 
 #: ../class-admin.php:108
+msgid "Top Left"
+msgstr ""
+
+#: ../class-admin.php:113
+msgid "Background Color"
+msgstr ""
+
+#: ../class-admin.php:117
+msgid "Font Color"
+msgstr ""
+
+#: ../class-admin.php:122
+msgid "Content"
+msgstr ""
+
+#: ../class-admin.php:125
 msgid "Bar Message"
 msgstr ""
 
-#: ../class-admin.php:112
+#: ../class-admin.php:129
 msgid "More Info Text"
 msgstr ""
 
-#: ../class-admin.php:116
+#: ../class-admin.php:133
 msgid "Accept Text"
 msgstr ""
 
-#: ../class-admin.php:120
+#: ../class-admin.php:137
 msgid "Bar Link"
 msgstr ""
 
-#: ../class-admin.php:121
+#: ../class-admin.php:138
 msgid "Use this field if you want to link a page instead of showing the popup"
 msgstr ""
 
-#: ../class-admin.php:139
+#: ../class-admin.php:156
 msgid "\"Close Popup\" Text"
 msgstr ""
 
-#: ../class-admin.php:143
+#: ../class-admin.php:160
 msgid "Popup Box Content"
 msgstr ""
 
-#: ../class-admin.php:144
+#: ../class-admin.php:161
 msgid "Use this to add a popup that informs your users about your cookie policy"
 msgstr ""
 
-#: ../class-admin.php:150
+#: ../class-admin.php:167
 msgid "Blocked code message"
 msgstr ""
 
-#: ../class-admin.php:151
+#: ../class-admin.php:168
 msgid "This is the message that will be displayed for locked-code areas"
 msgstr ""
 
-#: ../class-admin.php:159
+#: ../class-admin.php:176
 msgid "Save Changes"
 msgstr ""
 
-#: ../class-frontend.php:184
+#: ../class-frontend.php:208
 msgid "Cookies are enabled"
 msgstr ""
 
-#: ../class-frontend.php:185
+#: ../class-frontend.php:209
 msgid "Revoke cookie consent"
 msgstr ""
 
-#: ../class-frontend.php:199
+#: ../class-frontend.php:214
 msgid "Cookies are disabled"
 msgstr ""
 
-#: ../class-frontend.php:200
+#: ../class-frontend.php:214
 #, php-format
 msgid "Accept Cookies by clicking \"%s\" in the banner."
 msgstr ""
@@ -213,4 +243,10 @@ msgstr ""
 msgid ""
 "<b>Content not available.</b><br><small>Please allow cookies by clicking "
 "Accept on the banner</small>"
+msgstr ""
+
+#: ../eu-cookie-law.php:35
+msgid ""
+"EU Cookie Law informs users that your site uses cookies, with option to lock "
+"scripts before consent. Light + Customizable style."
 msgstr ""

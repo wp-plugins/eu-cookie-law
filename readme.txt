@@ -1,7 +1,7 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.5.5
-Stable tag:	2.5.5
+Version:	2.5.6
+Stable tag:	2.5.6
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy, eu cookie law, italy, cookie, consent, europe
@@ -145,6 +145,12 @@ function wpcache_broken_message() {`
 9. Fully customizable
 
 == Changelog ==
+
+= 2.5.6 20.07.2015 =
+* Improved translation system
+* Improved compatibility with WPML
+* Fixed some missing strings in admin panel
+* Added es_ES, fr_FR, de_DE translation files (blank)
 
 = 2.5.5 19.07.2015 =
 * Added Dutch (nl_NL) by [Gerard Weijer](http://gerardweijer.nl)

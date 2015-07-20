@@ -57,9 +57,9 @@ function peadig_eucookie_options() {
 					<td><input id="autoblock" name="peadig_eucookie[autoblock]" type="checkbox" value="1" <?php checked('1', $options['autoblock']); ?> /><br>
 <small><?php _e('This function will automatically block iframes, embeds and scripts in your post, pages and widgets.', 'eu-cookie-law'); ?></small></td>
 				</tr>
-                <tr valign="top"><th scope="row"><label for="tinymcebutton"><?php _e('Enable TinyMce Button'); ?></label></th>
+                <tr valign="top"><th scope="row"><label for="tinymcebutton"><?php _e('Enable TinyMce Button', 'eu-cookie-law'); ?></label></th>
 					<td><input id="tinymcebutton" name="peadig_eucookie[tinymcebutton]" type="checkbox" value="1" <?php checked('1', $options['tinymcebutton']); ?> /><br>
-<small><?php _e('Click here if you want to turn on the tinymce button for manual insertion of EU Cookie Law shortcodes while editing contents.'); ?></small></td>
+<small><?php _e('Click here if you want to turn on the tinymce button for manual insertion of EU Cookie Law shortcodes while editing contents.', 'eu-cookie-law'); ?></small></td>
 				</tr>
 				<tr valign="top"><th scope="row"><label for="lengthnum">
                     <?php _e('Cookie acceptance lenght', 'eu-cookie-law'); ?></label></th>
@@ -75,17 +75,17 @@ function peadig_eucookie_options() {
 <small><?php _e('Once the user clicks accept the bar will disappear. You can set how long this will apply for before the bar reappears to the user.', 'eu-cookie-law'); ?></small>
 					</td>
 				</tr>
-                <tr valign="top"><th scope="row"><label for="scrollconsent"><?php _e('Scroll Consent'); ?></label></th>
+                <tr valign="top"><th scope="row"><label for="scrollconsent"><?php _e('Scroll Consent', 'eu-cookie-law'); ?></label></th>
 					<td><input id="scrollconsent" name="peadig_eucookie[scrollconsent]" type="checkbox" value="1" <?php checked('1', $options['scrollconsent']); ?> /><br>
-<small><?php _e('Click here if you want to consider scrolling as cookie acceptation. Users should be informed about this...'); ?></small></td>
+<small><?php _e('Click here if you want to consider scrolling as cookie acceptation. Users should be informed about this...', 'eu-cookie-law'); ?></small></td>
 				</tr>
-                <tr valign="top"><th scope="row"><label for="navigationconsent"><?php _e('Navigation Consent'); ?></label></th>
+                <tr valign="top"><th scope="row"><label for="navigationconsent"><?php _e('Navigation Consent', 'eu-cookie-law'); ?></label></th>
 					<td><input id="navigationconsent" name="peadig_eucookie[navigationconsent]" type="checkbox" value="1" <?php checked('1', $options['navigationconsent']); ?> /><br>
-<small><?php _e('Click here if you want to consider continuing navigation as cookie acceptation. Users should be informed about this...'); ?></small></td>
+<small><?php _e('Click here if you want to consider continuing navigation as cookie acceptation. Users should be informed about this...', 'eu-cookie-law'); ?></small></td>
 				</tr>
-                <tr valign="top"><th scope="row"><label for="networkshare"><?php _e('Share Cookie across Network'); ?><br>(BETA)</label></th>
+                <tr valign="top"><th scope="row"><label for="networkshare"><?php _e('Share Cookie across Network', 'eu-cookie-law'); ?><br>(BETA)</label></th>
 					<td><input id="networkshare" name="peadig_eucookie[networkshare]" type="checkbox" value="1" <?php checked('1', $options['networkshare']); ?> /><br>
-<small><?php _e('Click here if you want to share euCookie across your network (subdomains or multisite)'); ?></small></td>
+<small><?php _e('Click here if you want to share euCookie across your network (subdomains or multisite)', 'eu-cookie-law'); ?></small></td>
 				</tr>
                 <tr valign="top"><th scope="row"><label for="networkshareurl">
                     <?php _e('Network Domain', 'eu-cookie-law'); ?></label></th>
@@ -95,7 +95,7 @@ function peadig_eucookie_options() {
         <hr>
 			<h3 class="title"><?php _e('Appearance'); ?></h3>
 			<table class="form-table">
-				<tr valign="top"><th scope="row"><label for="position"><?php _e('Position'); ?></label></th>
+				<tr valign="top"><th scope="row"><label for="position"><?php _e('Position', 'eu-cookie-law'); ?></label></th>
 					<td>
 						<select name="peadig_eucookie[position]">
 							  <option value="bottomright"<?php if ($options['position'] == 'bottomright') { echo ' selected="selected"'; } ?>>
