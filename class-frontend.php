@@ -142,7 +142,7 @@ function eu_cookie_shortcode( $atts, $content = null ) {
 }
 add_shortcode( 'cookie', 'eu_cookie_shortcode' );
 
-function ecl_callback($buffer) { return ecl_erase($buffer); }
+function ecl_callback($buffer) { return ecl_erase_light($buffer); }
 
 add_filter( 'the_content', 'ecl_erase', 11); 
 add_filter( 'widget_display_callback','ecl_erase', 11, 3 ); 
@@ -154,9 +154,18 @@ add_action('wp_head', 'ecl_buffer_start');
 add_action('wp_footer', 'ecl_buffer_end'); 
 
 function ecl_erase($content) {
-    if ( !cookie_accepted() && eucookie_option('autoblock') && !get_post_field( 'eucookielaw_exclude', get_the_id() ) ) {
-        $content = preg_replace('#<iframe.*?\/iframe>|<object.+?</object>|<embed.*?>#is', generate_cookie_notice('auto', '100%'), $content);
+    if ( !cookie_accepted() &&
+        eucookie_option('autoblock') &&
+        !(get_post_field( 'eucookielaw_exclude', get_the_id() ) && current_filter() == 'the_content')
+       ) {
+        $content = preg_replace('#<iframe.*?\/iframe>|<object.*?\/object>|<embed.*?>#is', generate_cookie_notice('auto', '100%'), $content);
         $content = preg_replace('#<script.*?\/script>#is', '', $content);
+    }
+    return $content;
+}
+
+function ecl_erase_light($content) {
+    if ( !cookie_accepted() && eucookie_option('autoblock') ) {
         $content = preg_replace('#<!cookie_start.*?\!cookie_end>#is', generate_cookie_notice('auto', '100%'), $content);
         $content = preg_replace('#<div id=\"disqus_thread\".*?\/div>#is', generate_cookie_notice('auto', '100%'), $content);
     }

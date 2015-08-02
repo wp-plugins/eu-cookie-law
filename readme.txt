@@ -1,7 +1,7 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.5.6
-Stable tag:	2.5.6
+Version:	2.5.7
+Stable tag:	2.5.7
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy, eu cookie law, italy, cookie, consent, europe
@@ -127,7 +127,7 @@ At the moment using a cache service could create conflicts with the plugin.
 So that you have:
 `<?php
 if ( !isset( $_COOKIE['euCookie'] ) ){ return; }
-# WP SUPER CACHE 1.2
+
 function wpcache_broken_message() {`
 
 * = some features in this page are marked with "sperimental". It means that we are testing these functions. We highly suggest you to check this page regularly if you are using one of these.
@@ -145,6 +145,11 @@ function wpcache_broken_message() {`
 9. Fully customizable
 
 == Changelog ==
+
+= 2.5.7 02.08.2015 =
+* **eucookielaw_exclude** field now applies to content only
+* Performance improvements
+* Minor changes
 
 = 2.5.6 20.07.2015 =
 * Improved translation system
