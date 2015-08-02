@@ -7,6 +7,7 @@ jQuery(document).ready(function($){
 	var isCookiePage = eucookielaw_data.isCookiePage;
 	var isRefererWebsite = eucookielaw_data.isRefererWebsite;
 	var deleteCookieUrl = eucookielaw_data.deleteCookieUrl;
+	var autoBlock = eucookielaw_data.autoBlock;
 	
 	$(".eu_control_btn").click(function() {
 		window.location.replace(deleteCookieUrl);
@@ -42,6 +43,10 @@ jQuery(document).ready(function($){
 		var today = new Date(), expire = new Date();
 		expire.setTime(today.getTime() + (expireTimer * 24 * 60 * 60 * 1000) );
 		document.cookie = "euCookie=set; "+networkShareURL+"expires=" + expire.toUTCString() + "; path=/";
-		window.location.reload();
+		if (autoBlock == 1) {
+			window.location.reload();
+		} else {
+			$(".pea_cook_wrapper").fadeOut("fast");
+		}
 	}
 });

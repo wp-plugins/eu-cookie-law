@@ -53,7 +53,7 @@ function peadig_eucookie_options() {
 				<tr valign="top"><th scope="row"><label for="enabled"><?php _e('Activate'); ?></label></th>
 					<td><input id="enabled" name="peadig_eucookie[enabled]" type="checkbox" value="1" <?php checked('1', $options['enabled']); ?> /></td>
 				</tr>
-                <tr valign="top"><th scope="row"><label for="autoblock"><?php _e('Auto Block'); ?><br>(BETA)</label></th>
+                <tr valign="top"><th scope="row"><label for="autoblock"><?php _e('Auto Block'); ?></label></th>
 					<td><input id="autoblock" name="peadig_eucookie[autoblock]" type="checkbox" value="1" <?php checked('1', $options['autoblock']); ?> /><br>
 <small><?php _e('This function will automatically block iframes, embeds and scripts in your post, pages and widgets.', 'eu-cookie-law'); ?></small></td>
 				</tr>

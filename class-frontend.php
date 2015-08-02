@@ -21,6 +21,7 @@ function eucookie_scripts() {
     
     $eclData = array(
         'euCookieSet' => $euCookieSet,
+        'autoBlock' =>  eucookie_option('autoblock'),
         'expireTimer' => get_expire_timer(),
         'scrollConsent' => eucookie_option('scrollconsent'),
         'networkShareURL' => ecl_get_cookie_domain(),
