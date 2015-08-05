@@ -215,13 +215,13 @@ function eu_cookie_control_shortcode( $atts ) {
     if ( cookie_accepted() ) {
         return '
             <div class="pea_cook_control" style="color:'.ecl_frontstyle('fontcolor').'; background-color: rgba('.ecl_frontstyle('backgroundcolor').',0.9);">
-                '.__('Cookies are enabled', 'eu-cookie-law').'
-                <button id="eu_revoke_cookies" class="eu_control_btn">'.__('Revoke cookie consent', 'eu-cookie-law').'</button>
+                '.eucookie_option('cc-cookieenabled').'<br>
+                <button id="eu_revoke_cookies" class="eu_control_btn">'.eucookie_option('cc-disablecookie').'</button>
             </div>';
     } else {
         return '
             <div class="pea_cook_control" style="color:'.ecl_frontstyle('fontcolor').'; background-color: rgba('.ecl_frontstyle('backgroundcolor').',0.9);">
-                '.__('Cookies are disabled', 'eu-cookie-law').'<br>'.sprintf( __( 'Accept Cookies by clicking "%s" in the banner.', 'eu-cookie-law' ), '<b>'.eucookie_option('barbutton').'</b>' ).'
+                '.str_replace( '%s', eucookie_option('barbutton'), eucookie_option('cc-cookiedisabled') ).'
             </div>';            
     }
 }

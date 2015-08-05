@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Fri Jun 05 2015 16:34:27 GMT+0200 (ora legale Europa "
 "occidentale)\n"
-"PO-Revision-Date: Mon Jul 20 2015 20:47:09 GMT+0200 (ora legale Europa "
+"PO-Revision-Date: Wed Aug 05 2015 15:47:51 GMT+0200 (ora legale Europa "
 "occidentale)\n"
 "Last-Translator: admin <admin@127.0.0.1>\n"
 "Language-Team: \n"
@@ -207,23 +207,85 @@ msgstr "Geblokkeerde code boodschap"
 msgid "This is the message that will be displayed for locked-code areas"
 msgstr "Dit het bericht dat wordt weergegeven op vergrendelde code gebieden "
 
-#: ../class-admin.php:176
+#: ../class-admin.php:180
+msgid "Cookie enabled message"
+msgstr ""
+"Cookie\n"
+" \n"
+"ingeschakeld\n"
+" \n"
+"bericht"
+
+#: ../class-admin.php:181
+msgid "This is the message that will be displayed when cookie are enabled"
+msgstr ""
+"Dit\n"
+" \n"
+"bericht\n"
+" \n"
+"wordt\n"
+" \n"
+"weergegeven\n"
+" \n"
+"wanneer\n"
+" \n"
+"cookies\n"
+" \n"
+"zijn\n"
+" \n"
+"ingeschakeld"
+
+#: ../class-admin.php:185
+msgid "\"Disable Cookie\" Text"
+msgstr "\"Cookie Uitschakelen\" bericht"
+
+#: ../class-admin.php:190
+msgid "Cookie disabled message"
+msgstr ""
+"cookie\n"
+" \n"
+"uitgeschakeld\n"
+" \n"
+"bericht"
+
+#: ../class-admin.php:191
+msgid "This is the message that will be displayed when cookie are not accepted"
+msgstr ""
+"Dit\n"
+" \n"
+"bericht\n"
+" \n"
+"wordt\n"
+" \n"
+"weergegeven\n"
+" \n"
+"wanneer\n"
+" \n"
+"cookies\n"
+" \n"
+"worden\n"
+" \n"
+"niet\n"
+" \n"
+"geaccepteerd"
+
+#: ../class-admin.php:198
 msgid "Save Changes"
 msgstr "Wijzigingen opslaan"
 
-#: ../class-frontend.php:208
+#: ../class-frontend.php:218 ../defaults.php:23
 msgid "Cookies are enabled"
 msgstr "Cookies zijn ingeschakeld"
 
-#: ../class-frontend.php:209
+#: ../class-frontend.php:219 ../defaults.php:22
 msgid "Revoke cookie consent"
 msgstr "De cookie toestemming intrekken"
 
-#: ../class-frontend.php:214
+#: ../class-frontend.php:224
 msgid "Cookies are disabled"
 msgstr "Cookies zijn uitgeschakeld"
 
-#: ../class-frontend.php:214
+#: ../class-frontend.php:224
 #, php-format
 msgid "Accept Cookies by clicking \"%s\" in the banner."
 msgstr "Accepteer Cookies door te klikken op \"% s\" in de banner."
@@ -265,6 +327,29 @@ msgid ""
 msgstr ""
 "<b> Inhoud niet beschikbaar. </ b> <br> <small> Accepteer cookiesdoor op "
 "Accepteren in de banner te klikken </ small>"
+
+#: ../defaults.php:24
+#, php-format
+msgid "Cookies are disabled<br>Accept Cookies by clicking \"%s\" in the banner."
+msgstr ""
+"Cookies\n"
+" \n"
+"zijn\n"
+" \n"
+"uitgeschakeld <br>\n"
+"Cookies\n"
+" \n"
+"accepteren\n"
+" \n"
+"door\n"
+" \n"
+"te klikken op\n"
+" \n"
+"\"%s\"\n"
+" \n"
+"in\n"
+" de balk\n"
+"."
 
 #: ../eu-cookie-law.php:35
 msgid ""

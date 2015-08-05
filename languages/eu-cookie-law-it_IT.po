@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Fri Jun 05 2015 16:34:27 GMT+0200 (ora legale Europa "
 "occidentale)\n"
-"PO-Revision-Date: Mon Jul 20 2015 20:44:34 GMT+0200 (ora legale Europa "
+"PO-Revision-Date: Wed Aug 05 2015 15:18:55 GMT+0200 (ora legale Europa "
 "occidentale)\n"
 "Last-Translator: admin <admin@127.0.0.1>\n"
 "Language-Team: \n"
@@ -208,23 +208,43 @@ msgstr ""
 "Questo è il messaggio che sarà mostrato nelle area in cui hai bloccato il "
 "codice"
 
-#: ../class-admin.php:176
+#: ../class-admin.php:180
+msgid "Cookie enabled message"
+msgstr "Messaggio cookie abilitati"
+
+#: ../class-admin.php:181
+msgid "This is the message that will be displayed when cookie are enabled"
+msgstr "Questo è il messaggio che comparirà quando i cookie sono abilitati"
+
+#: ../class-admin.php:185
+msgid "\"Disable Cookie\" Text"
+msgstr "Testo \"Disabilita Cookie\""
+
+#: ../class-admin.php:190
+msgid "Cookie disabled message"
+msgstr "Messaggio cookie disabilitati"
+
+#: ../class-admin.php:191
+msgid "This is the message that will be displayed when cookie are not accepted"
+msgstr "Questo messaggio comparirà quando i cookie non sono accettati"
+
+#: ../class-admin.php:198
 msgid "Save Changes"
 msgstr "Salva Impostazioni"
 
-#: ../class-frontend.php:208
+#: ../class-frontend.php:218 ../defaults.php:23
 msgid "Cookies are enabled"
-msgstr "Cookies abilitati"
+msgstr "I Cookie sono abilitati"
 
-#: ../class-frontend.php:209
+#: ../class-frontend.php:219 ../defaults.php:22
 msgid "Revoke cookie consent"
-msgstr "Revoca consenso dei cookie"
+msgstr "Revoca consenso cookie"
 
-#: ../class-frontend.php:214
+#: ../class-frontend.php:224
 msgid "Cookies are disabled"
-msgstr "Cookie disabilitati"
+msgstr "I Cookie sono disabilitati"
 
-#: ../class-frontend.php:214
+#: ../class-frontend.php:224
 #, php-format
 msgid "Accept Cookies by clicking \"%s\" in the banner."
 msgstr "Accetta i Cookie cliccando \"%s\" nel banner."
@@ -263,6 +283,13 @@ msgid ""
 msgstr ""
 "<b>Contenuto non disponibile</b><br><small>Consenti i cookie cliccando su "
 "\"Accetta\" nel banner\"</small>"
+
+#: ../defaults.php:24
+#, php-format
+msgid "Cookies are disabled<br>Accept Cookies by clicking \"%s\" in the banner."
+msgstr ""
+"I cookie sono disabilitati<br>Consenti al loro utilizzo cliccando \"%s\" nel "
+"banner."
 
 #: ../eu-cookie-law.php:35
 msgid ""

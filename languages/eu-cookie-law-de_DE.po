@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Fri Jun 05 2015 16:34:27 GMT+0200 (ora legale Europa "
 "occidentale)\n"
-"PO-Revision-Date: Mon Jul 20 2015 20:50:35 GMT+0200 (ora legale Europa "
+"PO-Revision-Date: Wed Aug 05 2015 15:16:09 GMT+0200 (ora legale Europa "
 "occidentale)\n"
 "Last-Translator: admin <admin@127.0.0.1>\n"
 "Language-Team: \n"
@@ -192,23 +192,43 @@ msgstr ""
 msgid "This is the message that will be displayed for locked-code areas"
 msgstr ""
 
-#: ../class-admin.php:176
+#: ../class-admin.php:180
+msgid "Cookie enabled message"
+msgstr ""
+
+#: ../class-admin.php:181
+msgid "This is the message that will be displayed when cookie are enabled"
+msgstr ""
+
+#: ../class-admin.php:185
+msgid "\"Disable Cookie\" Text"
+msgstr ""
+
+#: ../class-admin.php:190
+msgid "Cookie disabled message"
+msgstr ""
+
+#: ../class-admin.php:191
+msgid "This is the message that will be displayed when cookie are not accepted"
+msgstr ""
+
+#: ../class-admin.php:198
 msgid "Save Changes"
 msgstr ""
 
-#: ../class-frontend.php:208
+#: ../class-frontend.php:218 ../defaults.php:23
 msgid "Cookies are enabled"
 msgstr ""
 
-#: ../class-frontend.php:209
+#: ../class-frontend.php:219 ../defaults.php:22
 msgid "Revoke cookie consent"
 msgstr ""
 
-#: ../class-frontend.php:214
+#: ../class-frontend.php:224
 msgid "Cookies are disabled"
 msgstr ""
 
-#: ../class-frontend.php:214
+#: ../class-frontend.php:224
 #, php-format
 msgid "Accept Cookies by clicking \"%s\" in the banner."
 msgstr ""
@@ -241,6 +261,11 @@ msgstr ""
 msgid ""
 "<b>Content not available.</b><br><small>Please allow cookies by clicking "
 "Accept on the banner</small>"
+msgstr ""
+
+#: ../defaults.php:24
+#, php-format
+msgid "Cookies are disabled<br>Accept Cookies by clicking \"%s\" in the banner."
 msgstr ""
 
 #: ../eu-cookie-law.php:35

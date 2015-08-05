@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
 
-	var euCookieSet =  eucookielaw_data.euCookieSet;
+	var euCookieSet = eucookielaw_data.euCookieSet;
 	var expireTimer = eucookielaw_data.expireTimer;
 	var scrollConsent = eucookielaw_data.scrollConsent;
 	var networkShareURL = eucookielaw_data.networkShareURL;
@@ -9,6 +9,11 @@ jQuery(document).ready(function($){
 	var deleteCookieUrl = eucookielaw_data.deleteCookieUrl;
 	var autoBlock = eucookielaw_data.autoBlock;
 	
+	if (document.cookie.indexOf("euCookie") >= 0) {
+	  euCookieSet = true;
+	  $(".pea_cook_wrapper").fadeOut("fast");
+	}
+
 	$(".eu_control_btn").click(function() {
 		window.location.replace(deleteCookieUrl);
 	});

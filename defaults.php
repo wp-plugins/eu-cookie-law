@@ -19,6 +19,9 @@
         array('navigationconsent', '0'),
         array('networkshare', '0'),
         array('onlyeuropean', '0'),
+        array('cc-disablecookie', __('Revoke cookie consent', 'eu-cookie-law')),
+        array('cc-cookieenabled', __('Cookies are enabled', 'eu-cookie-law')),
+        array('cc-cookiedisabled', __('Cookies are disabled<br>Accept Cookies by clicking "%s" in the banner.', 'eu-cookie-law')),
         array('networkshareurl', ecl_getshareurl())
     );
 

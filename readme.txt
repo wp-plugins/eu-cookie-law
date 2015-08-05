@@ -1,7 +1,7 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.5.8
-Stable tag:	2.5.8
+Version:	2.5.9
+Stable tag:	2.5.9
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy, eu cookie law, italy, cookie, consent, europe
@@ -132,6 +132,15 @@ function wpcache_broken_message() {`
 
 * = some features in this page are marked with "sperimental". It means that we are testing these functions. We highly suggest you to check this page regularly if you are using one of these.
 
+= WPML =
+EU Cookie Law fully supports WPML plugin. All of the front-end strings are translatable to every language using WPML's String Translation module.
+
+WPML’s String Translation module is part of the Multilingual CMS package. To enable it, you first need to download and install it from your WPML.org account > Downloads section.
+
+Then, go to **WPML->String Translation** and use the display filter, at the top of the String Translation page, to determine which strings to display.
+
+Click on the translations link to open the translation editor and adjust the strings as you want. Be sure to click on ‘translation is complete‘ after you translate. Incomplete translations will not appear in the site.
+
 == Screenshots ==
 
 1. Banner example - [www.icscarpa.it](http://www.icscarpa.gov.it)
@@ -145,6 +154,12 @@ function wpcache_broken_message() {`
 9. Fully customizable
 
 == Changelog ==
+
+= 2.5.9 05.08.2015 =
+* Improved cache compatibility
+* Added WPML instructions in FAQS
+* Added cookie-control shortcode strings for customization+translations
+* Minor changes
 
 = 2.5.8 02.08.2015 =
 * Removed refresh if autoBlock not enabled

@@ -170,8 +170,30 @@ function peadig_eucookie_options() {
 <textarea style='font-size: 90%; width:95%;' name='peadig_eucookie[bhtmlcontent]' id='bhtmlcontent' rows='9' ><?php echo $options['bhtmlcontent']; ?></textarea>
 					</td>
 				</tr>
-			</table>
+                <tr>
             </table>
+                <hr>
+                <h3 class="title">Shortcode [cookie-control]</h3>
+			<table class="form-table">
+                </tr>
+                    <tr valign="top"><th scope="row"><label for="cc-cookieenabled">
+                    <?php _e('Cookie enabled message', 'eu-cookie-law'); ?><br>
+                    <small><?php _e('This is the message that will be displayed when cookie are enabled', 'eu-cookie-law'); ?></small></label></th>
+					<td>
+<textarea style='font-size: 90%; width:95%;' name='peadig_eucookie[cc-cookieenabled]' id='cc-cookieenabled' rows='9' ><?php echo $options['cc-cookieenabled']; ?></textarea><br>
+                    
+                    <label style="font-size:0.9em;font-weight:bold;" for="cc-disablecookie"><?php _e('"Disable Cookie" Text', 'eu-cookie-law'); ?></label>
+                    <input id="cc-disablecookie" type="text" name="peadig_eucookie[cc-disablecookie]" value="<?php echo $options['cc-disablecookie']; ?>" />
+					</td>
+				</tr>
+                <tr valign="top"><th scope="row"><label for="cc-cookiedisabled">
+                    <?php _e('Cookie disabled message', 'eu-cookie-law'); ?><br>
+                    <small><?php _e('This is the message that will be displayed when cookie are not accepted', 'eu-cookie-law'); ?></small></label></th>
+					<td>
+<textarea style='font-size: 90%; width:95%;' name='peadig_eucookie[cc-cookiedisabled]' id='cc-cookiedisabled' rows='9' ><?php echo $options['cc-cookiedisabled']; ?></textarea>
+					</td>
+				</tr>
+			</table>
 			<p class="submit">
 			<input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
 			</p>
