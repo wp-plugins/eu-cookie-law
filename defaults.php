@@ -2,7 +2,7 @@
 
     $defaults = array (
         array('enabled', '0'),
-        array('lengthnum', '1'),
+        //array('lengthnum', '1'),
         array('length', 'months'),
         array('position', 'bottomright'),
         array('barmessage', __('By continuing to use the site, you agree to the use of cookies.', 'eu-cookie-law')),

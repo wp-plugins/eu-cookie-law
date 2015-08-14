@@ -1,7 +1,7 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.5.9
-Stable tag:	2.5.9
+Version:	2.6
+Stable tag:	2.6
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy, eu cookie law, italy, cookie, consent, europe
@@ -24,8 +24,8 @@ Demo: [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 
 = Features =
 * **Customizable banner**
-* Option for consent by scrolling
-* Option for acceptance if user continues navigation
+* (option) Consent by Scrolling
+* (option) Consent by Navigation
 * Set cookie expiry
 * Fully **responsive** for tablets and smartphones
 * Set banner position
@@ -33,7 +33,9 @@ Demo: [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 * Compatible with **multilanguage** plugins
 * Certified for **WPML**
 * 2-layer cookie prevention
-* Works with Disqus
+* **Cookie Control" shortcode to easily revoke cookie consent
+* **Cookie List" shortcode to show a list of active cookies
+* Compatible with Disqus
 
 = Advanced Features =
 * Block scripts if cookies are not accepted
@@ -91,6 +93,9 @@ To display a box (in pages/posts) with ability to revoke consent (if cookies acc
 
 You can also create your own link that revokes cookie consent. Just append **?nocookie=1** to your url.
 Ex. wordpress.org/**?nocookie=1** or wordpress.org/something/**?nocookie=1**
+
+To display a list of active cookies on user client:
+`[cookie-list]`
 
 = PHP Functions available =
 You can easily verify if cookies consent has been set with:
@@ -154,6 +159,12 @@ Click on the translations link to open the translation editor and adjust the str
 9. Fully customizable
 
 == Changelog ==
+
+= 2.6 14.08.2015 =
+* Better navigation consent
+* Fixed occasional bugs with "headers already sent"
+* Added **cookie-list** shortcode (usage in FAQS)
+* Added allowed "0" value to cookie lenght (for SESSION)
 
 = 2.5.9 05.08.2015 =
 * Improved cache compatibility

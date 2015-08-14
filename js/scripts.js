@@ -10,8 +10,11 @@ jQuery(document).ready(function($){
 	var autoBlock = eucookielaw_data.autoBlock;
 	
 	if (document.cookie.indexOf("euCookie") >= 0) {
-	  euCookieSet = true;
 	  $(".pea_cook_wrapper").fadeOut("fast");
+	  euCookieSet = 1;
+	}
+	if ( euCookieSet > 0) {
+		createCookie();
 	}
 
 	$(".eu_control_btn").click(function() {
@@ -41,17 +44,24 @@ jQuery(document).ready(function($){
 			}
 		}	
 	});
-	
-	//if (isRefererWebsite && !isCookiePage && document.cookie.indexOf("euCookie") < 0 ) { euCookieConsent(); }
 
 	function euCookieConsent() {
-		var today = new Date(), expire = new Date();
-		expire.setTime(today.getTime() + (expireTimer * 24 * 60 * 60 * 1000) );
-		document.cookie = "euCookie=set; "+networkShareURL+"expires=" + expire.toUTCString() + "; path=/";
+		createCookie();
 		if (autoBlock == 1) {
-			window.location.reload();
-		} else {
-			$(".pea_cook_wrapper").fadeOut("fast");
+			window.location = window.location.pathname;
 		}
+	}
+	
+	function createCookie() {
+		var today = new Date(), expire = new Date();
+		
+		if (expireTimer > 0) {
+			expire.setTime(today.getTime() + (expireTimer * 24 * 60 * 60 * 1000) );
+			cookiestring = "euCookie=set; "+networkShareURL+"expires=" + expire.toUTCString() + "; path=/";
+		} else {
+			cookiestring = "euCookie=set; "+networkShareURL+"path=/";
+		}
+		document.cookie = cookiestring;
+		$(".pea_cook_wrapper").fadeOut("fast");
 	}
 });

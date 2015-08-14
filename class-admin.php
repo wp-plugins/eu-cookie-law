@@ -72,7 +72,7 @@ function peadig_eucookie_options() {
 							  <option value="months"<?php if ($options['length'] == 'months') { echo ' selected="selected"'; } ?>>
                                   <?php _e('months', 'eu-cookie-law'); ?></option>
 						</select><br>
-<small><?php _e('Once the user clicks accept the bar will disappear. You can set how long this will apply for before the bar reappears to the user.', 'eu-cookie-law'); ?></small>
+<small><?php _e('Once the user clicks accept the bar will disappear. You can set how long this will apply for before the bar reappears to the user.', 'eu-cookie-law'); ?> <?php _e('Set "0" for SESSION cookie.', 'eu-cookie-law'); ?></small>
 					</td>
 				</tr>
                 <tr valign="top"><th scope="row"><label for="scrollconsent"><?php _e('Scroll Consent', 'eu-cookie-law'); ?></label></th>

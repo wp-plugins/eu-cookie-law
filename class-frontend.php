@@ -2,17 +2,21 @@
 
     $euCookieSet = 0;
 
+add_action( 'send_headers', 'eucookie_headers' );
+function eucookie_headers() {
+	if ( isset($_GET['nocookie']) ) {
+        setcookie('euCookie', '', 1, '/');
+        global $euCookieSet;
+        $euCookieSet = 0;
+    }
+}
+
 function eucookie_scripts() {
     
     global $euCookieSet;
     global $deleteCookieUrlCheck;
     
-    if ( isset($_GET['nocookie']) ) {
-        unset($_COOKIE['euCookie']);
-        setcookie('euCookie', '', time() - 3600, '/'); 
-        $euCookieSet = 0;
-    } else if (  wp_get_referer() && eucookie_option('navigationconsent') && (!cookie_accepted()) && (eucookie_option('boxlinkid') != get_the_ID()) ) {
-        setcookie('euCookie', 'set', time()+get_expire_timer()*60*60*24, '/', eucookie_option('networkshareurl'));
+    if ( !isset($_GET['nocookie']) && wp_get_referer() && eucookie_option('navigationconsent') && (!cookie_accepted()) && (eucookie_option('boxlinkid') != get_the_ID()) ) {
         $euCookieSet = 1;
     }
     
@@ -226,3 +230,23 @@ function eu_cookie_control_shortcode( $atts ) {
     }
 }
 add_shortcode( 'cookie-control', 'eu_cookie_control_shortcode' );
+
+function eu_cookie_list_shortcode( $atts ) {
+   
+    echo '<h3>Active Cookies</h3>
+    <table style="width:100%; word-break:break-all;">
+        <tr>
+            <th>Nome</th>
+            <th>Valore</th> 
+        </tr>';
+    foreach ($_COOKIE as $key=>$val) {
+
+        echo '<tr>';
+        echo '<td>'.$key.'</td>';
+        echo '<td>'.$val.'</td>';
+        echo '</tr>';
+    }
+    echo '</table>';
+    
+}
+add_shortcode( 'cookie-list', 'eu_cookie_list_shortcode' );
