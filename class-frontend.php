@@ -48,10 +48,10 @@ add_action('wp_head', 'eucookie_scripts');
 
 function ecl_get_cookie_domain() {
     
-    if ( !eucookie_option('networkshare') ) {
-        return false;
+    if ( eucookie_option('networkshare') ) {
+        return 'domain='.eucookie_option('networkshareurl').'; ';
     }
-    return 'domain='.eucookie_option('networkshareurl').'; ';
+    return '';
 }
 
 function cookie_accepted() {
@@ -59,7 +59,7 @@ function cookie_accepted() {
     
     if ( ! eucookie_option('enabled') ) { return true; }
     
-    if ( isset( $_COOKIE['euCookie'] ) || $euCookieSet ) {
+    if ( ( isset( $_COOKIE['euCookie'] ) && !isset( $_GET['nocookie'] ) ) || $euCookieSet ) {
         return true;
     } else {
         return false;

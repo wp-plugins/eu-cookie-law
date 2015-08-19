@@ -1,7 +1,7 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.6
-Stable tag:	2.6
+Version:	2.6.1
+Stable tag:	2.6.1
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy, eu cookie law, italy, cookie, consent, europe
@@ -57,9 +57,11 @@ You can lock cookies using `[cookie]` and `[/cookie]` shortcodes in every post, 
 
 = Included Languages =
 
-* English (default)
-* Italian (it_IT)
+* English (default) 
 * Dutch (nl_NL) - [Gerard Weijer](http://gerardweijer.nl)
+* German (de_DE) - [Karsten Höfner](http://www.mister-mx.de)
+* Italian (it_IT) - [Marco Milesi](http://marcomilesi.ml)
+* Spanish (es_ES) - [Núria Nadal](http://cherrycreative.es)
 
 If you want to help out, we have included the .pot file in /language folder.
 You can send them to milesimarco@outlook.com
@@ -159,6 +161,12 @@ Click on the translations link to open the translation editor and adjust the str
 9. Fully customizable
 
 == Changelog ==
+
+= 2.6.1 19.08.2015 =
+* Fixed Cookie Control bugs in some servers
+* Fixed wrong domain when set cookie in some servers
+* Added German (de_DE) by [Karsten Höfner](http://www.mister-mx.de)
+* Added Spanish (es_ES) by [Núria Nadal](http://cherrycreative.es)
 
 = 2.6 14.08.2015 =
 * Better navigation consent
