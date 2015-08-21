@@ -150,7 +150,7 @@ add_shortcode( 'cookie', 'eu_cookie_shortcode' );
 function ecl_callback($buffer) { return ecl_erase_light($buffer); }
 
 add_filter( 'the_content', 'ecl_erase', 11); 
-add_filter( 'widget_display_callback','ecl_erase', 11, 3 ); 
+add_filter( 'widget_text','ecl_erase', 11 ); 
 
 function ecl_buffer_start() { ob_start("ecl_callback"); } 
 function ecl_buffer_end() { ob_end_flush();	}

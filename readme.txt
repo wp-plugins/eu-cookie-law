@@ -1,7 +1,7 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.6.1
-Stable tag:	2.6.1
+Version:	2.6.2
+Stable tag:	2.6.2
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy, eu cookie law, italy, cookie, consent, europe
@@ -161,6 +161,10 @@ Click on the translations link to open the translation editor and adjust the str
 9. Fully customizable
 
 == Changelog ==
+
+= 2.6.2 21.08.2015 =
+* Fixed incompatibility with some plugins (eg. Ultimate Tag Cloud Widget)
+* Improved performances
 
 = 2.6.1 19.08.2015 =
 * Fixed Cookie Control bugs in some servers
