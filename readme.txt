@@ -1,7 +1,7 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.6.2
-Stable tag:	2.6.2
+Version:	2.6.3
+Stable tag:	2.6.3
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy, eu cookie law, italy, cookie, consent, europe
@@ -58,6 +58,7 @@ You can lock cookies using `[cookie]` and `[/cookie]` shortcodes in every post, 
 = Included Languages =
 
 * English (default) 
+* Catalan (ca) - [Núria Nadal](http://cherrycreative.es)
 * Dutch (nl_NL) - [Gerard Weijer](http://gerardweijer.nl)
 * German (de_DE) - [Karsten Höfner](http://www.mister-mx.de)
 * Italian (it_IT) - [Marco Milesi](http://marcomilesi.ml)
@@ -161,6 +162,9 @@ Click on the translations link to open the translation editor and adjust the str
 9. Fully customizable
 
 == Changelog ==
+
+= 2.6.3 26.08.2015 =
+* Added Catalan (ca) by [Núria Nadal](http://cherrycreative.es)
 
 = 2.6.2 21.08.2015 =
 * Fixed incompatibility with some plugins (eg. Ultimate Tag Cloud Widget)
