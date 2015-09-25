@@ -53,7 +53,7 @@ function peadig_eucookie_options() {
 				<tr valign="top"><th scope="row"><label for="enabled"><?php _e('Activate'); ?></label></th>
 					<td><input id="enabled" name="peadig_eucookie[enabled]" type="checkbox" value="1" <?php checked('1', $options['enabled']); ?> /></td>
 				</tr>
-                <tr valign="top"><th scope="row"><label for="autoblock"><?php _e('Auto Block'); ?></label></th>
+                <tr valign="top"><th scope="row"><label for="autoblock"><?php _e('Auto Block', 'eu-cookie-law'); ?></label></th>
 					<td><input id="autoblock" name="peadig_eucookie[autoblock]" type="checkbox" value="1" <?php checked('1', $options['autoblock']); ?> /><br>
 <small><?php _e('This function will automatically block iframes, embeds and scripts in your post, pages and widgets.', 'eu-cookie-law'); ?></small></td>
 				</tr>
@@ -137,20 +137,33 @@ function peadig_eucookie_options() {
                     <?php _e('Bar Link', 'eu-cookie-law'); ?><br/><small>
                     <?php _e('Use this field if you want to link a page instead of showing the popup', 'eu-cookie-law'); ?></small></label></th>
                     <td>
-                    <?php $args = array(
+                    <?php
+                    $args = array(
                         'depth'                 => 0,
                         'child_of'              => 0,
                         'selected'              => $options['boxlinkid'],
-                        'echo'                  => 1,
+                        'echo'                  => 0,
                         'name'                  => 'peadig_eucookie[boxlinkid]',
                         'id'                    => 'boxlinkid', 
-                        'show_option_none'      => 'none', 
+                        'show_option_none'      => '* '.__('Customize'), 
                         'show_option_no_change' => null, 
                         'option_none_value'     => null, 
                     ); ?>
 
-                    <?php wp_dropdown_pages($args); ?>
+                    <?php
+                    $lol = wp_dropdown_pages($args);
+                    $add = null;
+                    if ( $options['boxlinkid'] == 'C' ) { $add = ' selected="selected" '; }
+                    $end = '<option class="level-0" value="C"'.$add.'>* '.__('Custom URL').'</option></select>';
+                    $lol = preg_replace('#</select>$#', $end, trim($lol)); 
+                    echo $lol; ?>
+                        
                     </td>
+				</tr>
+                <tr valign="top"><th scope="row"><label for="customurl">
+                    <?php _e('Custom URL'); ?></label></th>
+					<td><input id="customurl" type="text" name="peadig_eucookie[customurl]" value="<?php echo $options['customurl']; ?>" />
+                        <small> <?php _e('Enter the destination URL'); ?></small></td>
 				</tr>
                 <tr valign="top"><th scope="row"><label for="closelink">
                     <?php _e('"Close Popup" Text', 'eu-cookie-law'); ?></label></th>

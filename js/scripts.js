@@ -33,7 +33,7 @@ jQuery(document).ready(function($){
 		$(".pea_cook_more_info_popover").fadeOut("slow");
 	});
 	
-	$('#pea_cook_btn, .eucookie').click(function() {
+	$('#pea_cook_btn, .eucookie').live('click', function () {
 		euCookieConsent();
 	});
 	

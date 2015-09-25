@@ -91,13 +91,15 @@ function peadig_eucookie_bar() {
         return;
     }
             
-    if ( eucookie_option('boxlinkid') ) {
-        $linkid = apply_filters( 'wpml_object_id', eucookie_option('boxlinkid'), 'page' );
-        $link = get_permalink( $linkid );
+    if ( eucookie_option('boxlinkid') == 'C') {
+        $link =  eucookie_option('customurl');
+    } else if ( eucookie_option('boxlinkid') ) {
+        $link = get_permalink( apply_filters( 'wpml_object_id', eucookie_option('boxlinkid'), 'page' ) );
     } else {
         $link = '#';
     }
 ?>
+        <!-- Eu Cookie Law <?php echo get_option( 'ecl_version_number' ); ?> -->
         <div
             class="pea_cook_wrapper pea_cook_<?php echo eucookie_option('position'); ?>"
             style="

@@ -1,7 +1,7 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.6.3
-Stable tag:	2.6.3
+Version:	2.7
+Stable tag:	2.7
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
 Tags: eu cookie, cookies, law, analytics, european, italia, garante, privacy, eu cookie law, italy, cookie, consent, europe
@@ -23,18 +23,17 @@ https://www.youtube.com/watch?v=6f2qxC3GZJ8
 Demo: [www.sanpellegrinoterme.gov.it](http://www.sanpellegrinoterme.gov.it)
 
 = Features =
-* **Customizable banner**
-* (option) Consent by Scrolling
-* (option) Consent by Navigation
+* **Customizable banner** (color, position, strings)
+* Consent by **Clicking, Scrolling and Navigation**
+* Set your page, popup or custom URL for Cookie Policy
 * Set cookie expiry
 * Fully **responsive** for tablets and smartphones
-* Set banner position
 * Compatible with **mobile** themes and plugins 
 * Compatible with **multilanguage** plugins
 * Certified for **WPML**
 * 2-layer cookie prevention
-* **Cookie Control" shortcode to easily revoke cookie consent
-* **Cookie List" shortcode to show a list of active cookies
+* Shortcode to **revoke cookie consent**
+* Shortcode to show a list of cookies
 * Compatible with Disqus
 
 = Advanced Features =
@@ -62,6 +61,7 @@ You can lock cookies using `[cookie]` and `[/cookie]` shortcodes in every post, 
 * Dutch (nl_NL) - [Gerard Weijer](http://gerardweijer.nl)
 * German (de_DE) - [Karsten Höfner](http://www.mister-mx.de)
 * Italian (it_IT) - [Marco Milesi](http://marcomilesi.ml)
+* Polish (pl_PL) - [Mariusz Kołacz](http://techformator.pl/)
 * Spanish (es_ES) - [Núria Nadal](http://cherrycreative.es)
 
 If you want to help out, we have included the .pot file in /language folder.
@@ -162,6 +162,13 @@ Click on the translations link to open the translation editor and adjust the str
 9. Fully customizable
 
 == Changelog ==
+
+= 2.7 25.09.2015 =
+* **Added** option to define custom URL for cookie page
+* Fixed bug in Firefox - Thanks @gandalfthegrey
+* Added Polish - Thanks Mariusz Kołacz
+* Fixed some missing admin-side translations - Thanks Mariusz Kołacz
+* Minor changes and performance improvements
 
 = 2.6.3 26.08.2015 =
 * Added Catalan (ca) by [Núria Nadal](http://cherrycreative.es)
