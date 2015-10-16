@@ -67,7 +67,7 @@ You can lock cookies using `[cookie]` and `[/cookie]` shortcodes in every post, 
 You can easily contribute here: [translate.wordpress.org/projects/wp-plugins/eu-cookie-law](https://translate.wordpress.org/projects/wp-plugins/eu-cookie-law).
 If you want to be translation editor for your locale, please send your username and language code (eg. it_IT) to milesimarco@outlook.com
 
-* Italian (it_IT): @milmor
+* Italian (it_IT): [@milmor](https://profiles.wordpress.org/milmor) 
 
 = Contributions =
 
