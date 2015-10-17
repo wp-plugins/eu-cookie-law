@@ -1,6 +1,6 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.7.3
+Version:	2.8
 Stable tag:	trunk
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
@@ -57,17 +57,21 @@ You can lock cookies using `[cookie]` and `[/cookie]` shortcodes in every post, 
 = Included Languages =
 
 * English (default) 
+
+Bundled by Plugin:
 * Catalan (ca) - [Núria Nadal](http://cherrycreative.es)
 * Dutch (nl_NL) - [Gerard Weijer](http://gerardweijer.nl)
-* German (de_DE) - [Karsten Höfner](http://www.mister-mx.de)
-* Italian (it_IT) - [Marco Milesi](http://marcomilesi.ml)
 * Polish (pl_PL) - [Mariusz Kołacz](http://techformator.pl/)
 * Spanish (es_ES) - [Núria Nadal](http://cherrycreative.es) 
 
-You can easily contribute here: [translate.wordpress.org/projects/wp-plugins/eu-cookie-law](https://translate.wordpress.org/projects/wp-plugins/eu-cookie-law).
+Bundled by WordPress:
+* Italian (it_IT): [@milmor](https://profiles.wordpress.org/milmor) 
+* Deutsch (de_DE) 
+
+You can contribute here: [translate.wordpress.org/projects/wp-plugins/eu-cookie-law](https://translate.wordpress.org/projects/wp-plugins/eu-cookie-law).
 If you want to be translation editor for your locale, please send your username and language code (eg. it_IT) to milesimarco@outlook.com
 
-* Italian (it_IT): [@milmor](https://profiles.wordpress.org/milmor) 
+WordPress translations by: [Karsten Höfner](http://www.mister-mx.de) (de_DE), [Marco Milesi](http://marcomilesi.ml) (it_IT)
 
 = Contributions =
 
@@ -164,6 +168,12 @@ Click on the translations link to open the translation editor and adjust the str
 9. Fully customizable
 
 == Changelog ==
+
+= 2.8 17.10.2015 =
+* Added **Top Center** and **Bottom Center** for banner position
+* Added **target="_blank" option for cookie policy link
+* Removed **ITALIAN** and **DEUTSCH** languages. They are now bundled by WordPress. After some minutes you update to this version, you will get a notice to update translations in your dashboard. Other languages will come soon.
+* Minor changes
 
 = 2.7.3 15.10.2015 =
 * Minor change for translate.wordpress.org translation system

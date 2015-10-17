@@ -39,6 +39,9 @@ function peadig_eucookie_options() {
             <a href="//wordpress.org/support/view/plugin-reviews/eu-cookie-law" target="_blank" class="add-new-h2">
                 <?php _e('Rate us', 'eu-cookie-law'); ?> ★★★★★
             </a>
+            <a href="//translate.wordpress.org/projects/wp-plugins/eu-cookie-law" target="_blank" class="add-new-h2">
+                <?php _e('Translate', 'eu-cookie-law'); ?>
+            </a>
             <a href="//wordpress.org/support/plugin/eu-cookie-law" target="_blank" class="add-new-h2">
                 <?php _e('Support', 'eu-cookie-law'); ?>
             </a>
@@ -102,10 +105,14 @@ function peadig_eucookie_options() {
                                   <?php _e('Bottom Right', 'eu-cookie-law'); ?></option>
 							  <option value="topright"<?php if ($options['position'] == 'topright') { echo ' selected="selected"'; } ?>>
                                   <?php _e('Top Right', 'eu-cookie-law'); ?></option>
+                              <option value="topcenter"<?php if ($options['position'] == 'topcenter') { echo ' selected="selected"'; } ?>>
+                                  <?php _e('Top Center', 'eu-cookie-law'); ?></option>
 							  <option value="bottomleft"<?php if ($options['position'] == 'bottomleft') { echo ' selected="selected"'; } ?>>
                                   <?php _e('Bottom Left', 'eu-cookie-law'); ?></option>
 							  <option value="topleft"<?php if ($options['position'] == 'topleft') { echo ' selected="selected"'; } ?>>
                                   <?php _e('Top Left', 'eu-cookie-law'); ?></option>
+                              <option value="bottomcenter"<?php if ($options['position'] == 'bottomcenter') { echo ' selected="selected"'; } ?>>
+                                  <?php _e('Bottom Center', 'eu-cookie-law'); ?></option>
 						</select>
 					</td>
 				</tr>
@@ -123,7 +130,7 @@ function peadig_eucookie_options() {
 			<table class="form-table">
 				<tr valign="top"><th scope="row"><label for="barmessage">
                     <?php _e('Bar Message', 'eu-cookie-law'); ?></label></th>
-					<td><input id="barmessage" type="text" name="peadig_eucookie[barmessage]" value="<?php echo $options['barmessage']; ?>" size="100" /></td>
+					<td><input class="i18n-multilingual-display" id="barmessage" type="text" name="peadig_eucookie[barmessage]" value="<?php echo $options['barmessage']; ?>" size="100" /></td>
 				</tr>
 				<tr valign="top"><th scope="row"><label for="barlink">
                     <?php _e('More Info Text', 'eu-cookie-law'); ?></label></th>
@@ -145,7 +152,7 @@ function peadig_eucookie_options() {
                         'echo'                  => 0,
                         'name'                  => 'peadig_eucookie[boxlinkid]',
                         'id'                    => 'boxlinkid', 
-                        'show_option_none'      => '* '.__('Customize'), 
+                        'show_option_none'      => '* '.__('Custome Message'), 
                         'show_option_no_change' => null, 
                         'option_none_value'     => null, 
                     ); ?>
@@ -157,8 +164,9 @@ function peadig_eucookie_options() {
                     $end = '<option class="level-0" value="C"'.$add.'>* '.__('Custom URL').'</option></select>';
                     $lol = preg_replace('#</select>$#', $end, trim($lol)); 
                     echo $lol; ?>
-                        
+                        <br><br><input id="boxlinkblank" name="peadig_eucookie[boxlinkblank]" type="checkbox" value="1" <?php checked('1', $options['boxlinkblank']); ?> /><label for="boxlinkblank"><small>Add target="_blank"</small></label>
                     </td>
+                    
 				</tr>
                 <tr valign="top"><th scope="row"><label for="customurl">
                     <?php _e('Custom URL'); ?></label></th>

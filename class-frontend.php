@@ -90,11 +90,14 @@ function peadig_eucookie_bar() {
 	if ( cookie_accepted()  ) {
         return;
     }
-            
+    
+    $target = '';
     if ( eucookie_option('boxlinkid') == 'C') {
         $link =  eucookie_option('customurl');
+        if ( eucookie_option('boxlinkblank') ) { $target = 'target="_blank" '; }
     } else if ( eucookie_option('boxlinkid') ) {
         $link = get_permalink( apply_filters( 'wpml_object_id', eucookie_option('boxlinkid'), 'page' ) );
+        if ( eucookie_option('boxlinkblank') ) { $target = 'target="_blank" '; }
     } else {
         $link = '#';
     }
@@ -106,7 +109,7 @@ function peadig_eucookie_bar() {
                 color:<?php echo ecl_frontstyle('fontcolor'); ?>;
                 background-color: rgba(<?php echo ecl_frontstyle('backgroundcolor'); ?>,0.85);
             ">
-            <p><?php echo eucookie_option('barmessage'); ?> <a style="color:<?php echo eucookie_option('fontcolor'); ?>;" href="<?php echo $link; ?>" id="fom"><?php echo eucookie_option('barlink'); ?></a> <button id="pea_cook_btn" class="pea_cook_btn" href="#"><?php echo eucookie_option('barbutton'); ?></button></p>
+            <p><?php echo eucookie_option('barmessage'); ?> <a style="color:<?php echo eucookie_option('fontcolor'); ?>;" href="<?php echo $link; ?>" <?php echo $target; ?>id="fom"><?php echo eucookie_option('barlink'); ?></a> <button id="pea_cook_btn" class="pea_cook_btn" href="#"><?php echo eucookie_option('barbutton'); ?></button></p>
         </div>
         <div class="pea_cook_more_info_popover">
             <div
