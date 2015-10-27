@@ -169,7 +169,7 @@ function ecl_erase($content) {
         !(get_post_field( 'eucookielaw_exclude', get_the_id() ) && current_filter() == 'the_content')
        ) {
         $content = preg_replace('#<iframe.*?\/iframe>|<object.*?\/object>|<embed.*?>#is', generate_cookie_notice('auto', '100%'), $content);
-        $content = preg_replace('#<script.*?\/script>#is', '', $content);
+        $content = preg_replace('#<script.(?:(?!eucookielaw_exclude).)*?\/script>#is', '', $content);
     }
     return $content;
 }

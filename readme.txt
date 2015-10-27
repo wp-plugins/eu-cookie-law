@@ -1,6 +1,6 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.8
+Version:	2.8.1
 Stable tag:	trunk
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
@@ -59,12 +59,14 @@ You can lock cookies using `[cookie]` and `[/cookie]` shortcodes in every post, 
 * English (default) 
 
 Bundled by Plugin:
+
 * Catalan (ca) - [Núria Nadal](http://cherrycreative.es)
 * Dutch (nl_NL) - [Gerard Weijer](http://gerardweijer.nl)
 * Polish (pl_PL) - [Mariusz Kołacz](http://techformator.pl/)
 * Spanish (es_ES) - [Núria Nadal](http://cherrycreative.es) 
 
 Bundled by WordPress:
+
 * Italian (it_IT): [@milmor](https://profiles.wordpress.org/milmor) 
 * Deutsch (de_DE) 
 
@@ -131,6 +133,8 @@ The plugin offers an exclusive function that allows you to block **iframes, embe
 
 If you want to exclude a page from being filtered, you can set custom post field name **eucookielaw_exclude** to **1**. To do this, enable "Custom Fields" in "Screen Options". Then in the "Custom Fields" box enter the name, the value, and hit "Add Custom Field".
 
+If you want to exclude a <script> from being filtered, you can type between <script> and </script> the string **eucookielaw_exclude**. This can be achieved either by adding class="eucookielaw_exclude" or with an html comment.
+
 = Cache =
 We are working to get the plugin fully compatible with most cache plugins.
 At the moment using a cache service could create conflicts with the plugin.
@@ -168,6 +172,10 @@ Click on the translations link to open the translation editor and adjust the str
 9. Fully customizable
 
 == Changelog ==
+
+= 2.8.1 27.10.2015 =
+* Added option to exclude manually a script. See our faqs
+* Readme changes
 
 = 2.8 17.10.2015 =
 * Added **Top Center** and **Bottom Center** for banner position
