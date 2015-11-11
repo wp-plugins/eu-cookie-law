@@ -1,6 +1,6 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.8.1
+Version:	2.8.2
 Stable tag:	trunk
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
@@ -54,26 +54,13 @@ You can lock cookies using `[cookie]` and `[/cookie]` shortcodes in every post, 
 
 > EU Cookie Law started from [Peadig](http://peadig.com/wordpress-plugins/eu-cookie-law/) in 2012 and in june 2015 has became part of [WPGov.it](http://www.wpgov.it) that aims to give Italian Public Government powerful open source solutions for websites.
 
-= Included Languages =
+= Translations =
+You can add your translations here: [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/eu-cookie-law) 
 
-* English (default) 
+If you want to be translation editor for your locale, please send your username and language code (eg. it_IT) to milesimarco@outlook.com.
+[@tabakisp](//profiles.wordpress.org/tabakisp) (el)
 
-Bundled by Plugin:
-
-* Catalan (ca) - [Núria Nadal](http://cherrycreative.es)
-* Dutch (nl_NL) - [Gerard Weijer](http://gerardweijer.nl)
-* Polish (pl_PL) - [Mariusz Kołacz](http://techformator.pl/)
-* Spanish (es_ES) - [Núria Nadal](http://cherrycreative.es) 
-
-Bundled by WordPress:
-
-* Italian (it_IT): [@milmor](https://profiles.wordpress.org/milmor) 
-* Deutsch (de_DE) 
-
-You can contribute here: [translate.wordpress.org/projects/wp-plugins/eu-cookie-law](https://translate.wordpress.org/projects/wp-plugins/eu-cookie-law).
-If you want to be translation editor for your locale, please send your username and language code (eg. it_IT) to milesimarco@outlook.com
-
-WordPress translations by: [Karsten Höfner](http://www.mister-mx.de) (de_DE), [Marco Milesi](http://marcomilesi.ml) (it_IT)
+Thanks to: [Gerard Weijer](http://gerardweijer.nl), [Karsten Höfner](http://www.mister-mx.de), [Mariusz Kołacz](http://techformator.pl/), [Marco Milesi](http://marcomilesi.ml), [Núria Nadal](http://cherrycreative.es)
 
 = Contributions =
 
@@ -173,6 +160,9 @@ Click on the translations link to open the translation editor and adjust the str
 
 == Changelog ==
 
+= 2.8.2 11.11.2015 =
+* Removed fr_FR and nl_NL (now automatically bundled by translate.wordpress.org)
+ 
 = 2.8.1 27.10.2015 =
 * Added option to exclude manually a script. See our faqs
 * Readme changes
