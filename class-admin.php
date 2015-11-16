@@ -60,12 +60,12 @@ function peadig_eucookie_options() {
 					<td><input id="autoblock" name="peadig_eucookie[autoblock]" type="checkbox" value="1" <?php checked('1', $options['autoblock']); ?> /><br>
 <small><?php _e('This function will automatically block iframes, embeds and scripts in your post, pages and widgets.', 'eu-cookie-law'); ?></small></td>
 				</tr>
-                <tr valign="top"><th scope="row"><label for="tinymcebutton"><?php _e('Enable TinyMce Button', 'eu-cookie-law'); ?></label></th>
+                <tr valign="top"><th scope="row"><label for="tinymcebutton"><?php _e('Enable TinyMCE Button', 'eu-cookie-law'); ?></label></th>
 					<td><input id="tinymcebutton" name="peadig_eucookie[tinymcebutton]" type="checkbox" value="1" <?php checked('1', $options['tinymcebutton']); ?> /><br>
-<small><?php _e('Click here if you want to turn on the tinymce button for manual insertion of EU Cookie Law shortcodes while editing contents.', 'eu-cookie-law'); ?></small></td>
+<small><?php _e('Click here if you want to turn on the TinyMCE button for manual insertion of EU Cookie Law shortcodes while editing contents.', 'eu-cookie-law'); ?></small></td>
 				</tr>
 				<tr valign="top"><th scope="row"><label for="lengthnum">
-                    <?php _e('Cookie acceptance lenght', 'eu-cookie-law'); ?></label></th>
+                    <?php _e('Cookie acceptance length', 'eu-cookie-law'); ?></label></th>
 					<td><input id="lengthnum" type="text" name="peadig_eucookie[lengthnum]" value="<?php echo $options['lengthnum']; ?>" size="5" /> 
 						<select name="peadig_eucookie[length]">
 							  <option value="days"<?php if ($options['length'] == 'days') { echo ' selected="selected"'; } ?>>

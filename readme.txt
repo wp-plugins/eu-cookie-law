@@ -1,6 +1,6 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.8.2
+Version:	2.8.3
 Stable tag:	trunk
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
@@ -159,6 +159,9 @@ Click on the translations link to open the translation editor and adjust the str
 9. Fully customizable
 
 == Changelog ==
+
+= 2.8.3 16.11.2015 =
+* Minor changes (typos)
 
 = 2.8.2 11.11.2015 =
 * Removed fr_FR and nl_NL (now automatically bundled by translate.wordpress.org)
