@@ -1,6 +1,6 @@
 === EU Cookie Law ===
 Contributors: alexmoss, Milmor, pleer, ShaneJones
-Version:	2.8.3
+Version:	2.8.4
 Stable tag:	trunk
 Author:		Alex Moss, Marco Milesi, Peadig, Shane Jones
 Author URI:   https://profiles.wordpress.org/milmor/
@@ -160,7 +160,8 @@ Click on the translations link to open the translation editor and adjust the str
 
 == Changelog ==
 
-= 2.8.3 16.11.2015 =
+= 2.8.4 16.11.2015 =
+* Prevent bot from cookie exclude (beta) - includes mshot screenshot previews
 * Minor changes (typos)
 
 = 2.8.2 11.11.2015 =

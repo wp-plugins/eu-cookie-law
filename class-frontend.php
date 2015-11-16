@@ -20,6 +20,10 @@ function eucookie_scripts() {
         $euCookieSet = 1;
     }
     
+    if ( isset($_SERVER['HTTP_USER_AGENT']) && preg_match('/bot|crawl|slurp|spider|mshot/i', $_SERVER['HTTP_USER_AGENT']) ) {
+        $euCookieSet = 1;
+    }
+    
 	wp_register_style	('basecss', plugins_url('css/style.css', __FILE__), false);
 	wp_enqueue_style	('basecss');
     
